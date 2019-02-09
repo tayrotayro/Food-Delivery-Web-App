@@ -3,6 +3,7 @@ import {
     Form, Icon, Input, Button, Checkbox, Card
 } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
+import '../../Styling/AuthorizationWrapper.css'
 
 class SignUpForm extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class SignUpForm extends Component {
     render() {
         return (
             <div className="sign-up">
-                <Card>
+                <Card style={{width: 350}}>
                     <h3>Sign Up</h3>
                     <Form className="">
                         <Form.Item>
@@ -26,7 +27,9 @@ class SignUpForm extends Component {
                         <Form.Item>
                            <Input placeholder="Password" Icon="email"/> 
                         </Form.Item>
+                        <div className="sign-up-button">
                         <Button type="primary">Sign Up</Button>
+                        </div>
                     </Form>
                 </Card>
             </div>

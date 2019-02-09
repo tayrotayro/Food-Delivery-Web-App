@@ -26,7 +26,7 @@ class AuthorizationWrapper extends Component {
                         &&
                         <div>
                             <SignInForm />
-                            <Button type="secondary"
+                            <Button type="secondary" block
                                 onClick={() => this.setState({
                                     onSignInForm: false
                                 })}
@@ -38,7 +38,7 @@ class AuthorizationWrapper extends Component {
                         &&
                         <div>
                             <SignUpForm />
-                            <Button type="secondary"
+                            <Button type="secondary" block
                                 onClick={() => this.setState({
                                     onSignInForm: true
                                 })}

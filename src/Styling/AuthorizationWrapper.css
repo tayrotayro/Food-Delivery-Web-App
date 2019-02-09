@@ -22,6 +22,7 @@
     justify-content: center;
 }
 
+/* Sign In Form */
 .sign-in {
     display: flex;
     flex-direction: column;
@@ -40,4 +41,19 @@
     flex-direction: column;
     align-content: center;
     justify-content: center;
+}
+
+/* Sign Up Form*/
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-up-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
