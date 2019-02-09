@@ -21,3 +21,23 @@
     align-items: center;
     justify-content: center;
 }
+
+.sign-in {
+    display: flex;
+    flex-direction: column;
+}
+
+.authorization-header {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}

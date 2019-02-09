@@ -56,3 +56,83 @@ outputLayers.then(() => {
       }, time);
     });
 });
+
+/*HTML
+<div id="text">
+<!-- content generated with JS -->  
+</div>
+*/
+
+
+
+/* CSS
+
+$background: #efefef;
+$primary_font: 'Fredoka One', sans-serif;
+$first_color: rgba(0, 0, 255, 0.5);
+$second_color: rgba(255, 0, 0, 0.5);
+
+html, body {
+  background-color: $background;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#text {
+  font-family: $primary_font;
+  font-size: 6em;
+  line-height: 1em;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  &:hover {
+    cursor: default;
+  }
+  
+  .wrapper {
+    display: inline-block;
+    top: -900px;
+    position: relative;
+    height: 150px; 
+    width: 90px; 
+    transition: ease 0.3s all;
+    
+    span {
+      position: absolute;
+      top:0;
+      right:0;
+
+      transition: ease 0.3s all;
+      
+      &.letter-2 {
+        color: $first_color;
+      }
+
+      &.letter-1 {
+        color: $second_color;
+        z-index: 1;
+        
+        &:hover {
+           top: -3px;
+           right: -3px;
+           
+           ~ .letter-2 {
+             top: 3px;
+             right: 3px;
+           }
+        }
+      }
+      
+      &.space {
+        padding: 0;
+        min-width: 30px;
+        display: inline-block;
+      }
+    }
+  }
+}
+ 
+*/
