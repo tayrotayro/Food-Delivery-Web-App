@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'antd';
-import "../Styling/AuthorizationWrapper.css"
+import "../../Styling/AuthorizationWrapper.css"
 
 class AuthorizationWrapper extends Component {
     constructor(props) {
