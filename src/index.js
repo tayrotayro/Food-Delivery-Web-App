@@ -6,12 +6,16 @@ import HttpsRedirect from 'react-https-redirect';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import AuthorizationWrapper from './Components/Authorization/AuthorizationWrapper';
+import Dashboard from './Components/Dashboard/DashboardWrapper';
+import RestaurantView from './Components/RestaurantView/RestaurantView';
 
 ReactDOM.render(
     <HttpsRedirect>
         <BrowserRouter>
             <Switch>
                 <Route path="/authorization" component={AuthorizationWrapper}/>
+                <Route path="/dashboard" component={Dashboard} />
+                <Route path="/restaurant-view" component={RestaurantView} />
             </Switch>
         </BrowserRouter>
     </ HttpsRedirect>

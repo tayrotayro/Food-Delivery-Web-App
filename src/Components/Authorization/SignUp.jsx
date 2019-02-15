@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {
-    Form, Icon, Input, Button, Checkbox, Card, Select, Switch, Row, Col
+    Form, Icon, Input, Button, Checkbox, Card, Select, Switch, Divider
 } from 'antd';
-import FormItem from 'antd/lib/form/FormItem';
 import '../../Styling/AuthorizationWrapper.css'
 
 const { Option } = Select;
@@ -14,7 +13,6 @@ class SignUpForm extends Component {
 
         }
     }
-    /* hello */
     render() {
         return (
             <div className="sign-up">
@@ -30,16 +28,12 @@ class SignUpForm extends Component {
                         <Form.Item>
                             <Input placeholder="Password" Icon="email" required />
                         </Form.Item>
-                        <Form.Item>
-                            <Select placeholder="Please select an Account Type" required>
-                                <Option value="">Driver</Option>
-                                <Option value="">Customer</Option>
-                            </Select>
-                        </Form.Item>
                         <div className="sign-up-button">
                             <Button type="primary">Sign Up</Button>
                         </div>
                     </Form>
+                    <Divider />
+                    <p>Already have an account?</p>
                 </Card>
             </div >
         )

@@ -1,20 +1,31 @@
 .authorization-wrapper {
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
     display: flex;
-    flex-flow: row nowrap;
-}
-
-.image-column {
-    background-image: url('../sign-in.jpg');
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(169, 169, 169, 0.25),
+      rgba(169, 169, 169, 0.25)
+    ),
+    /* bottom, image */
+    url('../sign-in.jpg');
+    /* background-image: url('../sign-in.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 65%;
+    
+}
+
+.image-column {
+    /* width: 65%; */
     height: 100vh;
 }
 .login-column {
-    width: 35%;
+    /* width: 35%; */
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -26,14 +37,18 @@
 .sign-in {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .authorization-header {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
+    position: fixed;
+    top: 25px;
+}
+
+.authorization-header h1 {
+    color: white;
 }
 
 .login-form {
@@ -49,6 +64,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .sign-up-button {
@@ -57,3 +73,4 @@
     justify-content: center;
     align-items: center;
 }
+

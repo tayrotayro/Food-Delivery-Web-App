@@ -17,7 +17,7 @@ class SignInForm extends Component {
     render() {
         return (
             <div className="sign-in">
-                <Card >
+                <Card style={{ width: 350 }}>
                     <h3>Sign In</h3>
                     <Form className="login-form">
                         <Form.Item >
