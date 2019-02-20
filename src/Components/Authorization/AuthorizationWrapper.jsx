@@ -12,6 +12,10 @@ class AuthorizationWrapper extends Component {
         }
     }
 
+    navigateToDashboard = () => {
+        this.props.history.push('/dashboard');
+    }
+
     render() {
         return (
             <div className="authorization-wrapper">

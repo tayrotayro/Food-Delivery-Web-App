@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Card } from 'antd';
+import { Card, Row, Col, Input } from 'antd';
 import '../../Styling/Dashboard.css';
+
+const { Meta } = Card;
 
 class DashboardContent extends Component {
     constructor(props) {
@@ -13,15 +15,28 @@ class DashboardContent extends Component {
     render() {
         return (
             <div className="dasboard-content-wrapper">
-                <Card title="Featured Dishes" >
-                    <p
-                        style={{
-                            fontSize: 14,
-                            color: 'rgba(0, 0, 0, 0.85)',
-                            marginBottom: 16,
-                            fontWeight: 500,
-                        }}
-                    > </p>
+                <Card title="Featured Restaurants" >
+                    <div style={{ background: '#ECECEC', padding: '30px' }}>
+                        <div className="content-cards">
+                            <Row gutter={10}>
+                                <Col xs={{ span: 11, offset: 1 }} lg={{ span: 7, offset: 1 }}>
+                                    <Card title="Card title" bordered={false} >
+                                        Card content
+                                </Card>
+                                </Col>
+                                <Col xs={{ span: 11, offset: 1 }} lg={{ span: 7, offset: 1 }}>
+                                    <Card title="Card title" bordered={false}>
+                                        Card content
+                                </Card>
+                                </Col>
+                                <Col xs={{ span: 0, offset: 1 }} lg={{ span: 7, offset: 1 }}>
+                                    <Card title="Card title" bordered={false}>
+                                        Card content
+                                </Card>
+                                </Col>
+                            </Row>
+                        </div>
+                    </div>
                 </Card>
             </div>
         )
