@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Avatar } from 'antd';
 
-
-
-
 class RestaurantView extends Component {
     constructor(props) {
         super(props);

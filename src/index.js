@@ -13,8 +13,8 @@ ReactDOM.render(
     <HttpsRedirect>
         <BrowserRouter>
             <Switch>
+                <Route exact path="/" component={Dashboard} />
                 <Route path="/authorization" component={AuthorizationWrapper}/>
-                <Route path="/dashboard" component={Dashboard} />
                 <Route path="/restaurant-view" component={RestaurantView} />
             </Switch>
         </BrowserRouter>

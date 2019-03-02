@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'antd';
-import "../../Styling/AuthorizationWrapper.css"
+import "../../style/AuthorizationWrapper.css"
 import SignInForm from "../Authorization/SignIn";
 import SignUpForm from './SignUp';
 
@@ -13,7 +13,7 @@ class AuthorizationWrapper extends Component {
     }
 
     navigateToDashboard = () => {
-        this.props.history.push('/dashboard');
+        this.props.history.push('/');
     }
 
     render() {
@@ -26,7 +26,7 @@ class AuthorizationWrapper extends Component {
                     this.state.onSignInForm === true
                     &&
                     <div>
-                        <SignInForm />
+                        <SignInForm navigateToDashboard={this.navigateToDashboard} />
                         <Button type="secondary" block
                             onClick={() => this.setState({
                                 onSignInForm: false
@@ -38,7 +38,7 @@ class AuthorizationWrapper extends Component {
                     this.state.onSignInForm !== true
                     &&
                     <div>
-                        <SignUpForm />
+                        <SignUpForm navigateToDashboard={this.navigateToDashboard} />
                         <Button type="secondary" block
                             onClick={() => this.setState({
                                 onSignInForm: true

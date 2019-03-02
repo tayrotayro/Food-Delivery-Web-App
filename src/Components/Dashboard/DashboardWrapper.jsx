@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DashboardNavBar from './DashboardNavBar';
 import DashboardContent from './DashboardContent';
-import '../../Styling/Dashboard.css';
+import '../../style/Dashboard.css';
 
 
 class DashboardWrapper extends Component {
@@ -15,8 +15,8 @@ class DashboardWrapper extends Component {
     render() {
         return (
             <div className="dashboard-wrapper">
-            <DashboardNavBar />
-            <DashboardContent />
+                <DashboardNavBar />
+                <DashboardContent />
             </div>
         )
     }
