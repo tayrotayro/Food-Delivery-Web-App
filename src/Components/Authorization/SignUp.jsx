@@ -33,7 +33,7 @@ class SignUpForm extends Component {
             if (user) {
                 const userId = user._id;
                 localStorage.setItem("loggedInUserId", userId);
-                this.props.navigateToWelcome();
+                this.props.navigateToDashboard();
             } else {
                 this.setState({
                     emailErrorMessage: result.data.message

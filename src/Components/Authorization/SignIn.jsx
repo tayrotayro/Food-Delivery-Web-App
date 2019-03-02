@@ -4,6 +4,9 @@ import {
 } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import '../../Styling/AuthorizationWrapper.css';
+import axios from 'axios';
+
+
 
 class SignInForm extends Component {
     constructor(props) {
@@ -12,6 +15,26 @@ class SignInForm extends Component {
             username: "",
             password: ""
         }
+    }
+
+    submit = (event) => {
+        event.preventDefault(); // Stop the page from refreshing
+        axios.post(`http://localhost:5000/api/signin`, {
+            email: this.state.email,
+            password: this.state.password
+        })
+            .then(response => {
+                const user = response.data.data;
+                const userId = user._id
+                localStorage.setItem("loggedInUserId", userId);
+                this.props.navigateToDashboard();
+            })
+            .catch(error => {
+                console.log(error);
+                this.setState({
+                    error: true
+                })
+            });
     }
 
     render() {
@@ -41,7 +64,7 @@ class SignInForm extends Component {
                                 }} 
                               />
                         </FormItem>
-                        <Button type="primary">Sign In</Button>
+                        <Button type="primary" onClick={this.submit}>Sign In</Button>
                     </Form>
                 </Card>
             </div>
