@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { Button } from 'antd';
 import "../../style/AuthorizationWrapper.css"
-import SignInForm from "../Authorization/SignIn";
+import SignInForm from "./SignIn";
 import SignUpForm from './SignUp';
 
 class AuthorizationWrapper extends Component {
@@ -17,6 +18,10 @@ class AuthorizationWrapper extends Component {
     }
 
     render() {
+        if (localStorage.getItem('loggedInUserId')) {
+            return <Redirect to="/" />
+        }
+
         return (
             <div className="authorization-wrapper">
                 <div className="authorization-header">

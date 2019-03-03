@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Card, Row, Col, Input } from 'antd';
-import '../../style/Dashboard.css';
+import { Card, Row, Col } from 'antd';
+import '../../../style/Dashboard.css';
 
 const { Meta } = Card;
 

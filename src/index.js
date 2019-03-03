@@ -5,17 +5,19 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HttpsRedirect from 'react-https-redirect';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import AuthorizationWrapper from './Components/Authorization/AuthorizationWrapper';
-import Dashboard from './Components/Dashboard/DashboardWrapper';
-import RestaurantView from './Components/RestaurantView/RestaurantView';
+import AuthenticationWrapper from './components/Authentication/AuthenticationWrapper';
+import UserLayout from './components/UserView/Layout';
 
 ReactDOM.render(
     <HttpsRedirect>
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={Dashboard} />
-                <Route path="/authorization" component={AuthorizationWrapper}/>
-                <Route path="/restaurant-view" component={RestaurantView} />
+                <Route exact path="/" component={UserLayout} />
+                <Route path="/search" component={UserLayout} />
+                <Route path="/orders" component={UserLayout} />
+                <Route path="/cart" component={UserLayout} />
+                <Route path="/profile" component={UserLayout} />
+                <Route path="/authentication" component={AuthenticationWrapper} />
             </Switch>
         </BrowserRouter>
     </ HttpsRedirect>
