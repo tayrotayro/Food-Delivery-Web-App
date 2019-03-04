@@ -10,7 +10,7 @@ class OwnerPastOrderWrapper extends Component {
 
     render() {
         return (
-            <h1>Past Orders</h1>
+            <h1>Owner Past Orders</h1>
         )
     }
 }

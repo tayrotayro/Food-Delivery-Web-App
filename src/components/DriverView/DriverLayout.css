@@ -1,0 +1,13 @@
+.driver-status-bar {
+    height: 25px;
+    width: 100vw;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.driver-status-bar h4 {
+    margin: 0px;
+    color: white;
+}

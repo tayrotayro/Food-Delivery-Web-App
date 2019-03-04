@@ -10,7 +10,7 @@ class MenuWrapper extends Component {
 
     render() {
         return (
-            <h1>Menu</h1>
+            <h1>Owner Menu</h1>
         )
     }
 }

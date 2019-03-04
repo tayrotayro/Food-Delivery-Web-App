@@ -62,10 +62,10 @@ class OwnerTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="search" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="file-markdown" style={{ fontSize: '22px', height: '25px' }} />
                         }
                         selectedIcon={
-                            <Icon type="search" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="file-markdown" style={{ fontSize: '22px', height: '25px' }} />
                         }
                         title="Menu"
                         key="Search"

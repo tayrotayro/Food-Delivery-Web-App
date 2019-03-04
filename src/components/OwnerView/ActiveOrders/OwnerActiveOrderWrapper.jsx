@@ -10,7 +10,7 @@ class OwnerActiveOrderWrapper extends Component {
 
     render() {
         return (
-            <h1>Active Orders</h1>
+            <h1>Owner Active Orders</h1>
         )
     }
 }
