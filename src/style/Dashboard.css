@@ -1,11 +1,14 @@
-.search-bar {
-    float: right;
-    padding-top: 3px;
-    padding-right: 25px;
-}
 
 .dasboard-content-wrapper {
     text-align: center;
+}
+
+.spinner-wrapper{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 /* #tab-bar .demo {

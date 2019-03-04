@@ -4,8 +4,7 @@ import HomeWrapper from './Home/HomeWrapper';
 import OrderWrapper from './Orders/OrderWrapper';
 import ProfileWrapper from './Profile/ProfileWrapper';
 import SearchWrapper from './Search/SearchWrapper';
-import TabBar from './TabBar';
-
+import UserTabBar from './UserTabBar';
 
 class UserLayout extends Component {
     constructor(props) {
@@ -43,7 +42,7 @@ class UserLayout extends Component {
                         <ProfileWrapper />
                     }
                 </div>
-                <TabBar />
+                <UserTabBar />
             </div>
         )
     }
