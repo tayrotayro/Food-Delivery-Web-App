@@ -6,6 +6,7 @@ import MenuWrapper from './Menu/MenuWrapper'
 import ActiveOrders from './ActiveOrders/OwnerActiveOrderWrapper';
 import PastOrders from './PastOrders/OwnerPastOrderWrapper';
 import OwnerProfile from "./Profile/OwnerProfileWrapper";
+import OwnerProfileCreateRestaurant from './Profile/OwnerProfileCreateRestaurant';
 
 
 class OwnerLayout extends Component {
@@ -46,6 +47,11 @@ class OwnerLayout extends Component {
                     this.props.history.location.pathname === '/owner-profile'
                     &&
                     <OwnerProfile />
+                }
+                {
+                    this.props.history.location.pathname === '/owner-create-restaurant'
+                    &&
+                    <OwnerProfileCreateRestaurant />
                 }
                 <OwnerTabBar />
             </div>

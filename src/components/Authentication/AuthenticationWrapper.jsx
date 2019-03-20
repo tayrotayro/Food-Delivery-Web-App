@@ -20,12 +20,13 @@ class AuthorizationWrapper extends Component {
     render() {
         if (localStorage.getItem('loggedInUserId')) {
             return <Redirect to="/" />
-        }
+        } 
+    
 
         return (
             <div className="authorization-wrapper">
                 <div className="authorization-header">
-                    <h1>Deliverd 2 U</h1>
+                    <h1>Delivrd</h1>
                 </div>
                 {
                     this.state.onSignInForm === true

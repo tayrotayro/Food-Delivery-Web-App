@@ -31,6 +31,7 @@ ReactDOM.render(
                 <Route path="/owner-active" component={OwnerLayout} />
                 <Route path="/owner-past" component={OwnerLayout} />
                 <Route path="/owner-profile" component={OwnerLayout} />
+                <Route path="/owner-create-restaurant" component={OwnerLayout} />
                 {/* AUTHENTICATION ROUTE */}
                 <Route path="/authentication" component={AuthenticationWrapper} />
             </Switch>
