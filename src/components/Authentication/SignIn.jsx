@@ -5,6 +5,7 @@ import {
 import FormItem from 'antd/lib/form/FormItem';
 import '../../style/AuthorizationWrapper.css';
 import axios from 'axios';
+import "./style.css";
 
 
 
@@ -66,6 +67,9 @@ class SignInForm extends Component {
                         </FormItem>
                         <Button type="primary" htmlType="submit" onClick={this.submit}>Sign In</Button>
                     </Form>
+                    <div className="forgot">
+                        <a href="">Forgot Password?</a>
+                    </div>
                 </Card>
             </div>
         )

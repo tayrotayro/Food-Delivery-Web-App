@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Divider } from 'antd';
 
 class OwnerHomeWrapper extends Component {
     constructor(props) {
@@ -10,7 +11,10 @@ class OwnerHomeWrapper extends Component {
 
     render() {
         return (
+            <div className="owner-home">
             <h1>Owner Home</h1>
+            <Divider >My Restaurants</Divider>
+            </div>
         )
     }
 }
