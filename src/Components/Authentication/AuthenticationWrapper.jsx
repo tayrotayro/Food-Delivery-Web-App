@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { Button } from 'antd';
-import "../../Styling/AuthorizationWrapper.css"
-import SignInForm from "../Authorization/SignIn";
+import "../../style/AuthorizationWrapper.css"
+import SignInForm from "./SignIn";
 import SignUpForm from './SignUp';
 
 class AuthorizationWrapper extends Component {
@@ -13,20 +14,25 @@ class AuthorizationWrapper extends Component {
     }
 
     navigateToDashboard = () => {
-        this.props.history.push('/dashboard');
+        this.props.history.push('/');
     }
 
     render() {
+        if (localStorage.getItem('loggedInUserId')) {
+            return <Redirect to="/" />
+        } 
+    
+
         return (
             <div className="authorization-wrapper">
                 <div className="authorization-header">
-                    <h1>Deliverd 2 U</h1>
+                    <h1>Delivrd</h1>
                 </div>
                 {
                     this.state.onSignInForm === true
                     &&
                     <div>
-                        <SignInForm />
+                        <SignInForm navigateToDashboard={this.navigateToDashboard} />
                         <Button type="secondary" block
                             onClick={() => this.setState({
                                 onSignInForm: false
@@ -38,7 +44,7 @@ class AuthorizationWrapper extends Component {
                     this.state.onSignInForm !== true
                     &&
                     <div>
-                        <SignUpForm />
+                        <SignUpForm navigateToDashboard={this.navigateToDashboard} />
                         <Button type="secondary" block
                             onClick={() => this.setState({
                                 onSignInForm: true

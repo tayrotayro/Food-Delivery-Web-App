@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Card, Row, Col, Input } from 'antd';
-import '../../Styling/Dashboard.css';
+import { Card, Row, Col, Spin } from 'antd';
+import '../../../style/Dashboard.css';
 
 const { Meta } = Card;
 
@@ -8,11 +8,24 @@ class DashboardContent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            current: 'mail'
+            current: 'mail',
+            loading: true
         }
     }
 
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({ loading: false })
+        }, 1000)
+    }
+
     render() {
+        if (this.state.loading) {
+            return <div className="spinner-wrapper">
+                <Spin size="large" />
+            </div>
+        }
+
         return (
             <div className="dasboard-content-wrapper">
                 <Card title="Featured Restaurants" >

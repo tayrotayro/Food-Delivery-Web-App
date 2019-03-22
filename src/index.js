@@ -5,17 +5,35 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HttpsRedirect from 'react-https-redirect';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import AuthorizationWrapper from './Components/Authorization/AuthorizationWrapper';
-import Dashboard from './Components/Dashboard/DashboardWrapper';
-import RestaurantView from './Components/RestaurantView/RestaurantView';
+import AuthenticationWrapper from './Components/Authentication/AuthenticationWrapper';
+import UserLayout from './Components/UserView/UserLayout';
+import DriverLayout from './Components/DriverView/DriverLayout';
+import OwnerLayout from './Components/OwnerView/OwnerLayout';
 
 ReactDOM.render(
     <HttpsRedirect>
         <BrowserRouter>
             <Switch>
-                <Route path="/authorization" component={AuthorizationWrapper}/>
-                <Route path="/dashboard" component={Dashboard} />
-                <Route path="/restaurant-view" component={RestaurantView} />
+                {/* USER VIEW ROUTES */}
+                <Route exact path="/" component={UserLayout} />
+                <Route path="/search" component={UserLayout} />
+                <Route path="/orders" component={UserLayout} />
+                <Route path="/cart" component={UserLayout} />
+                <Route path="/profile" component={UserLayout} />
+                {/* DRIVER VIEW ROUTES */}
+                <Route path="/driver-home" component={DriverLayout} />
+                <Route path="/driver-active" component={DriverLayout} />
+                <Route path="/driver-past" component={DriverLayout} />
+                <Route path="/driver-profile" component={DriverLayout} />
+                {/* OWNER VIEW ROUTES */}
+                <Route path="/owner-home" component={OwnerLayout} />
+                <Route path="/owner-menu" component={OwnerLayout} />
+                <Route path="/owner-active" component={OwnerLayout} />
+                <Route path="/owner-past" component={OwnerLayout} />
+                <Route path="/owner-profile" component={OwnerLayout} />
+                <Route path="/owner-create-restaurant" component={OwnerLayout} />
+                {/* AUTHENTICATION ROUTE */}
+                <Route path="/authentication" component={AuthenticationWrapper} />
             </Switch>
         </BrowserRouter>
     </ HttpsRedirect>

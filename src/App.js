@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Button from 'antd/lib/button';
-import { Menu, Dropdown, Icon } from 'antd';
 import './App.css';
 
 class App extends Component {
