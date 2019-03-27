@@ -20,7 +20,7 @@ class AuthorizationWrapper extends Component {
     render() {
         if (localStorage.getItem('loggedInUserId')) {
             return <Redirect to="/" />
-        } 
+        }
     
 
         return (

@@ -1,0 +1,6 @@
+Next meeting finish:
+
+    1. Landing page for owner with all of the owners restaurants before entering Owner view
+    2. Customer can place an order from a menu and send to the data base
+    3. create back end for creating a restaurant and creating a menu all in the same process
+    4. create a back end for pulling active and past orders
