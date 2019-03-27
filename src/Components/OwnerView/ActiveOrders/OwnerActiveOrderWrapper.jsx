@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import OrderCard from '../../Restaurants/OrderCard';
 
 class OwnerActiveOrderWrapper extends Component {
     constructor(props) {
@@ -10,7 +11,11 @@ class OwnerActiveOrderWrapper extends Component {
 
     render() {
         return (
-            <h1>Owner Active Orders</h1>
+            <list>     
+             <OrderCard/>
+             <OrderCard/>
+          </list>
+        
         )
     }
 }
