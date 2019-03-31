@@ -1,49 +1,40 @@
-import React,{Component} from 'react';
-import {mountNode} from 'react-dom';
-import {Card} from 'antd';
+import React, { Component } from 'react';
+import { Card } from 'antd';
+import { Item } from 'antd-mobile/lib/tab-bar';
+import CardInfo from './CardInfo'
+import ProgressBar from './ProgressBar';
 
-//const {Meta} = Card;
+const gridStyle={
+  width: '25%',
+  textAlign: 'center',
+}
 
 class OrderCard extends Component {
   constructor(props) {
-      super(props);
-      this.state = {
+    super(props);
+    this.state = {
 
-      }
+    }
   }
 
 
-render(){
+  render() {
+    return (
+      
+        <Card
+          type="inner"
+          title="Payton-Karno"
+        >
 
+         <Card.Grid style={{gridStyle}}><CardInfo/></Card.Grid>
+          <Card.Grid title = "Status" style={{gridStyle}}><ProgressBar/></Card.Grid>
+          <Card.Grid style={{gridStyle}}>total: $25.00</Card.Grid>
 
-  return(
-  <Card title="Orders">
-      <p
-      style={{
-        fontSize: 14,
-        color: 'rgba(0, 0, 0, 0.85)',
-        marginBottom: 16,
-        fontWeight: 500,
-        }}
-      >
-      Active Orders
-        </p>
-          <Card
-            type="inner"
-            title="Order 1"
-            extra={<a href="#">Ready for Delivery</a>}
-          >
-            Order Name=" "
-            Contents=" "
-            address=" "
-            status=" "
-            $total=" "
+        </Card>
 
-          </Card>
-  </Card>,
-  mountNode
-    );
+        
+    )
   }
 }
 
-export default OrderCard
+export default OrderCard;
