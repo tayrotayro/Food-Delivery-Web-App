@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import OrderCard from '../../Restaurants/OrderCard';
 import { Card } from 'antd';
+import ActiveOrderCard from '../../OrderCards.jsx/ActiveOrderCard';
 
 class OwnerActiveOrderWrapper extends Component {
     constructor(props) {
@@ -23,8 +23,8 @@ class OwnerActiveOrderWrapper extends Component {
             >
 
             </p>
-             <OrderCard/>
-             <OrderCard/>
+             <ActiveOrderCard/>
+             <ActiveOrderCard/>
          </Card>
         
         )

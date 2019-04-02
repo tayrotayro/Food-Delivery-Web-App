@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Card } from 'antd';
-import { Item } from 'antd-mobile/lib/tab-bar';
 import CardInfo from './CardInfo'
 import ProgressBar from './ProgressBar';
 
@@ -9,7 +8,7 @@ const gridStyle={
   textAlign: 'center',
 }
 
-class OrderCard extends Component {
+class ActiveOrderCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,4 +36,4 @@ class OrderCard extends Component {
   }
 }
 
-export default OrderCard;
+export default ActiveOrderCard;
