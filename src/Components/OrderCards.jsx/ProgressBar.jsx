@@ -13,7 +13,7 @@ class ProgressBar extends Component {
   }
 
   increase = () => {
-    let percent = this.state.percent + 10;
+    let percent = this.state.percent + 33.33;
     if (percent > 100) {
       percent = 100;
     }
@@ -21,7 +21,7 @@ class ProgressBar extends Component {
   }
 
   decline = () => {
-    let percent = this.state.percent - 10;
+    let percent = this.state.percent - 33.33;
     if (percent < 0) {
       percent = 0;
     }
