@@ -21,7 +21,7 @@ class AuthorizationWrapper extends Component {
         if (localStorage.getItem('loggedInUserId')) {
             return <Redirect to="/" />
         }
-    
+    //TODO: write else statement to redirect to authentication
 
         return (
             <div className="authorization-wrapper">

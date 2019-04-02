@@ -30,7 +30,7 @@ class OwnerProfileWrapper extends Component {
                 </div>
                 <div className="profile-change-view"
                     style={{ padding: "35px", paddingTop: "15px", paddingBottom: "15px" }}>
-                    <Button type="danger" size="large" block onClick={this.navigateToUser}>Change View</Button>
+                    <Button type="danger" size="large" block onClick={this.navigateToUser}>Exit Owner View</Button>
                 </div>
 
             </div>

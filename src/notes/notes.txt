@@ -4,3 +4,5 @@ Next meeting finish:
     2. Customer can place an order from a menu and send to the data base
     3. create back end for creating a restaurant and creating a menu all in the same process
     4. create a back end for pulling active and past orders
+    5. restaurant time Input component for front end
+    6. restaurant time input routes
