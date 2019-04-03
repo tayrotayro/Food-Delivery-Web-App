@@ -1,9 +1,8 @@
-import 'antd-mobile/dist/antd-mobile.css';
+import { TabBar } from 'antd-mobile';
 import { Icon } from 'antd';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { TabBar } from 'antd-mobile';
-
+import 'antd-mobile/dist/antd-mobile.css';
 
 class OwnerTabBar extends Component {
     constructor(props) {
