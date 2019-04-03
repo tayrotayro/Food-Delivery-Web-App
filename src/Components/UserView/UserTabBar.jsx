@@ -1,11 +1,10 @@
-import 'antd-mobile/dist/antd-mobile.css';
+import { TabBar } from 'antd-mobile';
 import { Icon } from 'antd';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { TabBar } from 'antd-mobile';
+import 'antd-mobile/dist/antd-mobile.css';
 
-
-class OwnerTabBar extends Component {
+class UserTabBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,14 +17,16 @@ class OwnerTabBar extends Component {
     componentDidMount() {
         const pathname = this.props.history.location.pathname;
 
-        if (pathname === "/driver-home") {
-            this.setState({ selectedTab: "driverHomeTab" })
-        }  else if (pathname === '/driver-active') {
-            this.setState({ selectedTab: "driverActiveTab" })
-        } else if (pathname === '/driver-past') {
-            this.setState({ selectedTab: "driverPastTab" })
-        } else if (pathname === '/driver-profile') {
-            this.setState({ selectedTab: "driverProfileTab" })
+        if (pathname === "/") {
+            this.setState({ selectedTab: "homeTab" })
+        } else if (pathname === '/search') {
+            this.setState({ selectedTab: "searchTab" })
+        } else if (pathname === '/orders') {
+            this.setState({ selectedTab: "orderTab" })
+        } else if (pathname === '/cart') {
+            this.setState({ selectedTab: "cartTab" })
+        } else if (pathname === '/profile') {
+            this.setState({ selectedTab: "profileTab" })
         }
     }
 
@@ -48,12 +49,12 @@ class OwnerTabBar extends Component {
                         }
                         title="Home"
                         key="Home"
-                        selected={this.state.selectedTab === 'driverHomeTab'}
+                        selected={this.state.selectedTab === 'homeTab'}
                         onPress={() => {
                             this.setState({
-                                selectedTab: 'driverHomeTab',
+                                selectedTab: 'homeTab',
                             });
-                            this.props.history.push("/driver-home");
+                            this.props.history.push("/");
                         }}
                         data-seed="logId"
                     >
@@ -61,39 +62,59 @@ class OwnerTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="inbox" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="search" style={{ fontSize: '22px', height: '25px' }} />
                         }
                         selectedIcon={
-                            <Icon type="inbox" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="search" style={{ fontSize: '22px', height: '25px' }} />
                         }
-                        title="Active Orders"
-                        key="Orders"
-                        badge={1}
-                        selected={this.state.selectedTab === 'driverActiveTab'}
+                        title="Search"
+                        key="Search"
+                        selected={this.state.selectedTab === 'searchTab'}
                         onPress={() => {
                             this.setState({
-                                selectedTab: 'driverActiveTab',
+                                selectedTab: 'searchTab',
                             });
-                            this.props.history.push("/driver-active");
+                            this.props.history.push("/search");
+                        }}
+                        data-seed="logId1"
+                    >
+                        {/* {this.renderContent('Koubei')} */}
+                    </TabBar.Item>
+                    <TabBar.Item
+                        icon={
+                            <Icon type="ordered-list" style={{ fontSize: '22px', height: '25px' }} />
+                        }
+                        selectedIcon={
+                            <Icon type="ordered-list" style={{ fontSize: '22px', height: '25px' }} />
+                        }
+                        title="Orders"
+                        key="Orders"
+                        badge={1}
+                        selected={this.state.selectedTab === 'orderTab'}
+                        onPress={() => {
+                            this.setState({
+                                selectedTab: 'orderTab',
+                            });
+                            this.props.history.push("/orders");
                         }}
                     >
                         {/* {this.renderContent('Friend')} */}
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="schedule" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="shopping-cart" style={{ fontSize: '22px', height: '25px' }} />
                         }
                         selectedIcon={
-                            <Icon type="schedule" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="shopping-cart" style={{ fontSize: '22px', height: '25px' }} />
                         }
-                        title="Past Orders"
+                        title="Cart"
                         key="Cart"
-                        selected={this.state.selectedTab === 'driverPastTab'}
+                        selected={this.state.selectedTab === 'cartTab'}
                         onPress={() => {
                             this.setState({
-                                selectedTab: 'driverPastTab',
+                                selectedTab: 'cartTab',
                             });
-                            this.props.history.push("/driver-past");
+                            this.props.history.push("/cart");
                         }}
                         data-seed="logId1"
                     >
@@ -108,12 +129,12 @@ class OwnerTabBar extends Component {
                         }
                         title="Profile"
                         key="Profile"
-                        selected={this.state.selectedTab === 'driverProfileTab'}
+                        selected={this.state.selectedTab === 'profileTab'}
                         onPress={() => {
                             this.setState({
-                                selectedTab: 'driverProfileTab',
+                                selectedTab: 'profileTab',
                             });
-                            this.props.history.push("/driver-profile");
+                            this.props.history.push("/profile");
                         }}
                         data-seed="logId1"
                     >
@@ -125,4 +146,4 @@ class OwnerTabBar extends Component {
     }
 }
 
-export default withRouter(OwnerTabBar);
+export default withRouter(UserTabBar);

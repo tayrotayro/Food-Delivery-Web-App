@@ -1,0 +1,13 @@
+.owner-status-bar {
+    height: 25px;
+    width: 100vw;
+    background-color: lightskyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.owner-status-bar h4 {
+    margin: 0px;
+    color: white;
+}

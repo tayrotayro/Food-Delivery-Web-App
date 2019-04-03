@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
-class OwnerHomeWrapper extends Component {
+class CartWrapper extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            
         }
     }
 
     render() {
         return (
-            <h1>Owner Home</h1>
+            <h1>Cart</h1>
         )
     }
 }
 
-export default OwnerHomeWrapper;
+export default CartWrapper;

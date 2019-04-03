@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class OwnerHomeWrapper extends Component {
+class DriverActiveOrderWrapper extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,9 +10,9 @@ class OwnerHomeWrapper extends Component {
 
     render() {
         return (
-            <h1>Owner Home</h1>
+            <h1>Driver Active Orders</h1>
         )
     }
 }
 
-export default OwnerHomeWrapper;
+export default DriverActiveOrderWrapper;
