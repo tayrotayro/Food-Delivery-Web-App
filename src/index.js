@@ -5,10 +5,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HttpsRedirect from 'react-https-redirect';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import AuthenticationWrapper from './components/Authentication/AuthenticationWrapper';
-import UserLayout from './components/UserView/UserLayout';
-import DriverLayout from './components/DriverView/DriverLayout';
-import OwnerLayout from './components/OwnerView/OwnerLayout';
+import AuthenticationWrapper from './Components/Authentication/AuthenticationWrapper';
+import UserLayout from './Components/UserView/UserLayout';
+import DriverLayout from './Components/DriverView/DriverLayout';
+import OwnerLayout from './Components/OwnerView/OwnerLayout';
 
 ReactDOM.render(
     <HttpsRedirect>
