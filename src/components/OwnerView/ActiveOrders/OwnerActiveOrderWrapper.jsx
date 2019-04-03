@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Card } from 'antd';
+import ActiveOrderCard from '../../UserView/Orders/OrderCards/ActiveOrderCard';
 
 class OwnerActiveOrderWrapper extends Component {
     constructor(props) {
@@ -10,7 +12,10 @@ class OwnerActiveOrderWrapper extends Component {
 
     render() {
         return (
-            <h1>Owner Active Orders</h1>
+            <Card title = "Active Orders">
+                <ActiveOrderCard />
+            </Card>
+            
         )
     }
 }

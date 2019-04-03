@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Card} from 'antd';
+import PastOrderCard from '../../UserView/Orders/OrderCards/PastOrderCard';
 
 class OwnerPastOrderWrapper extends Component {
     constructor(props) {
@@ -10,7 +12,9 @@ class OwnerPastOrderWrapper extends Component {
 
     render() {
         return (
-            <h1>Owner Past Orders</h1>
+            <Card title = "Past Orders">
+                <PastOrderCard />
+            </Card>
         )
     }
 }
