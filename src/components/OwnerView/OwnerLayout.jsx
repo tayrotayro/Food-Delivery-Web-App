@@ -7,7 +7,7 @@ import ActiveOrders from './ActiveOrders/OwnerActiveOrderWrapper';
 import PastOrders from './PastOrders/OwnerPastOrderWrapper';
 import OwnerProfile from "./Profile/OwnerProfileWrapper";
 import OwnerProfileCreateRestaurant from './Profile/OwnerProfileCreateRestaurant';
-
+import "../OwnerView/Profile/style.css";
 
 class OwnerLayout extends Component {
     constructor(props) {
@@ -53,7 +53,9 @@ class OwnerLayout extends Component {
                     &&
                     <OwnerProfileCreateRestaurant />
                 }
-                <OwnerTabBar />
+                <div className='owner-tab-bar'>
+                    <OwnerTabBar />
+                </div>
             </div>
         )
     }
