@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Card, Row, Col, Spin } from 'antd';
 import '../../../style/Dashboard.css';
-import RestaurantCard from './RestaurantCard';
+import FeaturedRestaurantCard from './FeaturedRestaurantCard';
+import RestaurantList from '../../UserView/Home/RestaurantList';
 
 const { Meta } = Card;
 
@@ -39,7 +40,7 @@ class DashboardContent extends Component {
                         <div className="content-cards">
                             <Row gutter={10}>
                                 <Col xs={{ span: 11, offset: 1 }} lg={{ span: 7, offset: 1 }}>
-                                    <RestaurantCard />
+                                    <FeaturedRestaurantCard />
                                 </Col>
                                 <Col xs={{ span: 11, offset: 1 }} lg={{ span: 7, offset: 1 }}>
                                     <Card title="Card title" bordered={false}>
@@ -54,6 +55,9 @@ class DashboardContent extends Component {
                             </Row>
                         </div>
                     </div>
+                </Card>
+                <Card title = "Restaurants">
+                    <RestaurantList />
                 </Card>
             </div>
         )

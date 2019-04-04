@@ -1,7 +1,7 @@
 import { Card } from 'antd';
 import React, { Component } from 'react';
 
-class Restaurant extends Component {
+class FeaturedRestaurantCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -26,4 +26,4 @@ class Restaurant extends Component {
     }
 }
 
-export default Restaurant;
+export default FeaturedRestaurantCard;
