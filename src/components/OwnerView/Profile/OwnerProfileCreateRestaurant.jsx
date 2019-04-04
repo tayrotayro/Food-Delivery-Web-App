@@ -42,6 +42,7 @@ class OwnerProfileCreateRestaurant extends Component {
             phone: this.state.phone,
             description: this.state.description,
             priceRange: this.state.priceRange,
+            pictureURL: this.state.pictureURL,
             monHour: [this.state.monOpenHour, this.state.monCloseHour],
             tueHour: [this.state.tueOpenHour, this.state.tueCloseHour],
             wedHour: [this.state.wedOpenHour, this.state.wedCloseHour],
@@ -128,6 +129,16 @@ class OwnerProfileCreateRestaurant extends Component {
                             onChange={(result) => {
                                 this.setState({
                                     description: result.target.value
+                                })
+                            }} />
+                    </Form.Item>
+                    <Form.Item
+                        style={{ margin: '10px' }}>
+                        <Input placeholder="Picture URL" required
+                            style={{ width: '300px' }}
+                            onChange={(result) => {
+                                this.setState({
+                                    pictureURL: result.target.value
                                 })
                             }} />
                     </Form.Item>
@@ -301,6 +312,7 @@ class OwnerProfileCreateRestaurant extends Component {
                                 }}
                                 required />
                         </FormItem>
+                        <Form className="create-form"></Form>
                     </div>
 
 

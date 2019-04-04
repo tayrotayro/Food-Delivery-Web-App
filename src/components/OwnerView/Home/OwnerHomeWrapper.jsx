@@ -34,13 +34,10 @@ class OwnerHomeWrapper extends Component {
         const { Meta } = Card;
         const menu = (
             <Menu style={{width: 200, textAlign: "center"}}>
-                <h3>Restaurant Info</h3>
-                {/* <h3>Addresss:</h3> <h5>{this.state.restaurants.phone}</h5> */}
                 <Menu.Divider />
                 <Menu.Item key="3">3rd menu item</Menu.Item>
             </Menu>
         );
-
 
         return (
             <div className="owner-home">
@@ -48,12 +45,12 @@ class OwnerHomeWrapper extends Component {
                 <Divider >My Restaurants</Divider>
                 {
                     this.state.restaurants.map(restaurant => {
-                        return (
+                           return (
                             <div className="restaurant-cards">
                                 <Card
                                     hoverable
                                     style={{ width: 240, textAlign: "center" }}
-                                    cover={<img alt="example" src={restaurant.pictureURL} />}
+                                    cover={<img alt="example" src={restaurant.pictureURL}/>}
                                 >
                                     <Divider />
                                     <Meta

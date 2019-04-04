@@ -37,7 +37,7 @@ class DashboardContent extends Component {
                 <Card title="Featured Restaurants" >
                     <div style={{ background: '#ECECEC', padding: '30px' }}>
                         <div className="content-cards">
-                            <Row gutter={10}>
+                            {/* <Row gutter={10}>
                                 <Col xs={{ span: 11, offset: 1 }} lg={{ span: 7, offset: 1 }}>
                                     <RestaurantCard />
                                 </Col>
@@ -51,7 +51,7 @@ class DashboardContent extends Component {
                                         Card content
                                 </Card>
                                 </Col>
-                            </Row>
+                            </Row> */}
                         </div>
                     </div>
                 </Card>
