@@ -37,6 +37,7 @@ class OwnerTabBar extends Component {
                     unselectedTintColor="#949494"
                     tintColor="#33A3F4"
                     barTintColor="white"
+                    tabBarPosition="bottom"
                 // hidden={this.state.hidden}
                 // tabBarPosition="bottom"
                 >
