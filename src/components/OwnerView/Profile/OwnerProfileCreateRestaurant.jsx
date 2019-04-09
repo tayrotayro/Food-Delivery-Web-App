@@ -10,12 +10,12 @@ class OwnerProfileCreateRestaurant extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            //Modal values
             name: "",
             address: "",
             phone: "",
             description: "",
             priceRange: 1,
+            pictureURL: "",
             monOpenHour: null,
             monCloseHour: null,
             tueOpenHour: null,
@@ -35,8 +35,9 @@ class OwnerProfileCreateRestaurant extends Component {
 
     submit = (event) => {
         console.log("Submitted");
+        const ownerId = localStorage.getItem('loggedInUserId');
         event.preventDefault();
-        axios.post(`http://localhost:5000/api/restaurant`, {
+        axios.post(`http://localhost:5000/api/restaurant/${ownerId}`, {
             name: this.state.name,
             address: this.state.address,
             phone: this.state.phone,
@@ -61,7 +62,7 @@ class OwnerProfileCreateRestaurant extends Component {
             });
     }
 
-    //TODO: write function for each time picker to push times to state list.
+
 
     navigateToOwnerProfile = () => {
         this.props.history.push('/owner-profile');
