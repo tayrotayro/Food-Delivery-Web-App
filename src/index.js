@@ -20,6 +20,7 @@ ReactDOM.render(
                 <Route path="/orders" component={UserLayout} />
                 <Route path="/cart" component={UserLayout} />
                 <Route path="/profile" component={UserLayout} />
+                <Route path="/restaurant-menu" component={UserLayout} />
                 {/* DRIVER VIEW ROUTES */}
                 <Route path="/driver-home" component={DriverLayout} />
                 <Route path="/driver-active" component={DriverLayout} />

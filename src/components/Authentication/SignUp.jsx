@@ -77,7 +77,7 @@ class SignUpForm extends Component {
                                 }} />
                         </Form.Item>
                         <Form.Item>
-                            <Input placeholder="Password" required value={password}
+                            <Input placeholder="Password" type="password" required value={password}
                                 onChange={(result) => {
                                     this.setState({
                                         password: result.target.value

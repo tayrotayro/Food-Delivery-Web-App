@@ -5,6 +5,7 @@ import OrderWrapper from './Orders/OrderWrapper';
 import ProfileWrapper from './Profile/ProfileWrapper';
 import SearchWrapper from './Search/SearchWrapper';
 import UserTabBar from './UserTabBar';
+import UserMenu from "./Home/UserMenu";
 import { Redirect } from 'react-router-dom';
 
 
@@ -27,24 +28,29 @@ class UserLayout extends Component {
                         <HomeWrapper />
                     }
                     {
-                         this.props.history.location.pathname === '/search'
+                        this.props.history.location.pathname === '/search'
                         &&
                         <SearchWrapper />
                     }
                     {
-                         this.props.history.location.pathname === '/orders'
+                        this.props.history.location.pathname === '/orders'
                         &&
                         <OrderWrapper />
                     }
                     {
-                         this.props.history.location.pathname === '/cart'
+                        this.props.history.location.pathname === '/cart'
                         &&
                         <CartWrapper />
                     }
                     {
-                         this.props.history.location.pathname === '/profile'
+                        this.props.history.location.pathname === '/profile'
                         &&
                         <ProfileWrapper />
+                    }
+                    {
+                        this.props.history.location.pathname === '/restaurant-menu'
+                        &&
+                        <UserMenu />
                     }
                 </div>
                 <UserTabBar />

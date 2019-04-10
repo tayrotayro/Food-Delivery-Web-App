@@ -57,6 +57,11 @@ class OwnerLayout extends Component {
                     &&
                     <OwnerProfileCreateRestaurant />
                 }
+                {
+                    this.props.history.location.pathname === '/owner-create-menu-item'
+                    &&
+                    <OwnerProfileCreateRestaurant />
+                }
                 <div className='owner-tab-bar'>
                     <OwnerTabBar />
                 </div>
