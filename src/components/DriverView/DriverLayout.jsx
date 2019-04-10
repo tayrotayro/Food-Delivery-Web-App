@@ -5,6 +5,7 @@ import DriverActive from './ActiveOrders/DriverActiveOrdersWrapper';
 import DriverPast from './PastOrders/DriverPastOrdersWrapper';
 import DriverProfile from './Profile/DriverProfileWrapper';
 import './DriverLayout.css';
+import { Redirect } from "react-router-dom";
 
 class DriverLayout extends Component {
     constructor(props) {
@@ -13,6 +14,9 @@ class DriverLayout extends Component {
     }
 
     render() {
+        if (!localStorage.getItem('loggedInUserId')) {
+            return <Redirect to="/authentication" />
+        }
         return (
             <div className="driver-layout-wrapper">
                 <div className="driver-status-bar">

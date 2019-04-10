@@ -19,3 +19,9 @@
     align-content: right;
     padding-top: 15px;
 }
+
+.rest-info {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}

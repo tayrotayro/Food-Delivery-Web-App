@@ -5,6 +5,8 @@ import OrderWrapper from './Orders/OrderWrapper';
 import ProfileWrapper from './Profile/ProfileWrapper';
 import SearchWrapper from './Search/SearchWrapper';
 import UserTabBar from './UserTabBar';
+import { Redirect } from 'react-router-dom';
+
 
 class UserLayout extends Component {
     constructor(props) {
@@ -13,6 +15,9 @@ class UserLayout extends Component {
     }
 
     render() {
+        if (!localStorage.getItem('loggedInUserId')) {
+            return <Redirect to="/authentication" />
+        }
         return (
             <div className="user-layout-wrapper">
                 <div className="user-content">

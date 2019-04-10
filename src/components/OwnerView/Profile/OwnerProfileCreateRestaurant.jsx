@@ -55,7 +55,7 @@ class OwnerProfileCreateRestaurant extends Component {
             .then(response => {
                 console.log(response);
                 message.success(response.data.message);
-                this.navigateToOwnerHome();
+                this.navigateToCreateMenuItem();
             })
             .catch(error => {
                 console.log(error);
@@ -68,8 +68,8 @@ class OwnerProfileCreateRestaurant extends Component {
         this.props.history.push('/owner-profile');
     }
 
-    navigateToOwnerHome = () => {
-        this.props.history.push('/owner-home');
+    navigateToCreateMenuItem = () => {
+        this.props.history.push('/owner-create-menu-item');
     }
 
     convertTimeValue = (time) => {
@@ -125,7 +125,7 @@ class OwnerProfileCreateRestaurant extends Component {
                     </Form.Item>
                     <Form.Item
                         style={{ margin: '10px' }}>
-                        <Input placeholder="Description" required
+                        <Input placeholder="Restaurnat Description" required
                             style={{ width: '300px' }}
                             onChange={(result) => {
                                 this.setState({
@@ -135,7 +135,7 @@ class OwnerProfileCreateRestaurant extends Component {
                     </Form.Item>
                     <Form.Item
                         style={{ margin: '10px' }}>
-                        <Input placeholder="Picture URL" required
+                        <Input placeholder="Picture URL" 
                             style={{ width: '300px' }}
                             onChange={(result) => {
                                 this.setState({
@@ -143,6 +143,16 @@ class OwnerProfileCreateRestaurant extends Component {
                                 })
                             }} />
                     </Form.Item>
+                    {/* <Form.Item
+                        style={{ margin: '10px' }}>
+                        <Input placeholder="Menu Description" 
+                            style={{ width: '300px' }}
+                            onChange={(result) => {
+                                this.setState({
+                                    menuDescription: result.target.value
+                                })
+                            }} />
+                    </Form.Item> */}
                     <Select defaultValue="$" style={{ width: 120 }} onChange={(value) => { this.setState({ priceRange: value }) }} required>
                         <Option value={1}>$</Option>
                         <Option value={2}>$$</Option>
