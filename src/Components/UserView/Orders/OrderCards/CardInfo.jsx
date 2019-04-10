@@ -25,6 +25,7 @@ class CardInfo extends Component {
 			</Menu>
 		);
 		return (
+			<div>
 			<Dropdown
 				overlay={menu}
 				onVisibleChange={this.handleVisibleChange}
@@ -34,6 +35,7 @@ class CardInfo extends Component {
 					Order Info <Icon type="down" />
 				</a>
 			</Dropdown>
+			</div>
 		);
 	}
 }

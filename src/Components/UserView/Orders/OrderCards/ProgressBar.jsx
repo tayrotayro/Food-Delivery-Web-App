@@ -32,10 +32,10 @@ class ProgressBar extends Component {
     return (
       <div>
         <Progress percent={this.state.percent} />
-        <ButtonGroup>
+       { /*<ButtonGroup>
           <Button onClick={this.decline} icon="minus" />
           <Button onClick={this.increase} icon="plus" />
-        </ButtonGroup>
+        </ButtonGroup>*/}
       </div>
     );
   }

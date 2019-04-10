@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
-import { Card } from 'antd';
+import { Card, Button } from 'antd';
 import CardInfo from './CardInfo'
 import ProgressBar from './ProgressBar';
 
 const gridStyle={
   width: '25%',
   textAlign: 'center',
+  
+  
+}
+
+const buttonStyle={
+flexDirection: 'row',
+  AlignItems: 'end',
+
 }
 
 class ActiveOrderCard extends Component {
@@ -25,9 +33,9 @@ class ActiveOrderCard extends Component {
           title="Payton-Karno"
         >
 
-         <Card.Grid style={{gridStyle}}><CardInfo/></Card.Grid>
+          <Card.Grid style={{gridStyle}}><CardInfo/></Card.Grid>
           <Card.Grid title = "Status" style={{gridStyle}}><ProgressBar/></Card.Grid>
-          <Card.Grid style={{gridStyle}}>total: $25.00</Card.Grid>
+          <Card.Grid style={{gridStyle}} >total: $25.00<Button size={"small"}>Ready for Pickup</Button></Card.Grid>
 
         </Card>
 
