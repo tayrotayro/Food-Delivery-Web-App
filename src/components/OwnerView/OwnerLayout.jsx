@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OwnerTabBar from './OwnerTabBar';
+import { Redirect } from 'react-router-dom';
 import './OwnerLayout.css';
 import OwnerHome from './Home/OwnerHomeWrapper';
 import MenuWrapper from './Menu/MenuWrapper'
@@ -16,6 +17,9 @@ class OwnerLayout extends Component {
     }
 
     render() {
+        if (!localStorage.getItem('loggedInUserId')) {
+            return <Redirect to="/authentication" />
+        }
         return (
             <div className="owner-layout-wrapper">
                 <div className="owner-status-bar">
