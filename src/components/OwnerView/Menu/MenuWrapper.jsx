@@ -20,9 +20,10 @@ class MenuWrapper extends Component {
 
         return (
         <div>
-            <h1>Owner Menu</h1>
-            <div>
-                <OwnerRestaurantMenuDropdown/>
+            <h1 style = {{textAlign: 'center'}}>Owner Menu</h1>
+            <div style = {{padding: '30px', textAlign: 'center'}}>
+                <OwnerRestaurantMenuDropdown
+                />
             </div>
             <Card title="Restaurant Menu" 
                 extra = {<ButtonGroup>
