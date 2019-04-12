@@ -28,7 +28,6 @@ class MenuWrapper extends Component {
             <Card title="Restaurant Menu" 
                 extra = {<ButtonGroup>
                     <Button type= 'primary'>Add Item</Button>
-                    <Button type = 'primary'>Edit Items</Button>
                 </ButtonGroup>}
             >
                 <MenuList/>

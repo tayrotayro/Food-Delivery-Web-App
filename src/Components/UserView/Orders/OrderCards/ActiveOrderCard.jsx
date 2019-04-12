@@ -36,9 +36,9 @@ class ActiveOrderCard extends Component {
           extra = {<Button style={{buttonStyle}} type ="primary">Ready for Pickup</Button>}
         >
 
-          <Card.Grid style={{gridStyle}}><CardInfo/></Card.Grid>
-          <Card.Grid title = "Status" style={{gridStyle}}><ProgressBar/></Card.Grid>
-          <Card.Grid style={{gridStyle}} >total: $25.00</Card.Grid>
+          <Card style={{gridStyle}}><CardInfo/></Card>
+          <Card style={{gridStyle}}><ProgressBar/></Card>
+          <Card style={{gridStyle}} >total: $25.00</Card>
 
         </Card>
 
