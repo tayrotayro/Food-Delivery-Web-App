@@ -37,8 +37,9 @@ class ActiveOrderCard extends Component {
         >
 
           <Card.Grid style={{gridStyle}}><CardInfo/></Card.Grid>
-          <Card.Grid title = "Status" style={{gridStyle}}><ProgressBar/></Card.Grid>
+          <Card.Grid title = "Status" style={{gridStyle}}></Card.Grid>
           <Card.Grid style={{gridStyle}} >total: $25.00</Card.Grid>
+          <ProgressBar />
 
         </Card>
 
