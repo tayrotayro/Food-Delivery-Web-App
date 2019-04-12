@@ -3,9 +3,6 @@ import { Progress, Button } from 'antd';
 
 const ButtonGroup = Button.Group;
 
-const Style ={
-    height: '25%'
-}
 
 class ProgressBar extends Component {
   state = {

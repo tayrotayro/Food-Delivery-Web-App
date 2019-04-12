@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table } from 'antd';
+import { Table,Divider } from 'antd';
 
 class MenuList extends Component {
     constructor(props) {
@@ -22,6 +22,17 @@ const columns=[{
 {
     title: 'Price',
     dataIndex: 'Price',
+},
+{
+    title: 'Action',
+    key: 'Action',
+    render: (text, record)=>(
+        <div>
+            <a href="">Edit</a>
+            <Divider type="vertical" />
+            <a href="">Delete</a>
+        </div>
+    ),
 }];
 
 const data =[{
