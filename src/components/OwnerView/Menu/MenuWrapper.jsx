@@ -27,11 +27,9 @@ class MenuWrapper extends Component {
                     />
                 </div>
                 <Card title="Restaurant Menu"
-                    extra={/*<ButtonGroup>
-                        <Button onClick={showConfirm}>
-                            Add Menu Item</Button>
-                    </ButtonGroup>*/
-                <CreateMenuItem />}
+                    extra={<ButtonGroup>
+                        <CreateMenuItem />
+                    </ButtonGroup>}
                 >
                     <MenuList />
                 </Card>

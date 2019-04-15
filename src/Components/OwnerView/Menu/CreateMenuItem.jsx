@@ -2,38 +2,70 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { Modal, Button, Form, Input } from 'antd';
 
-class OwnerCreateMenuItem extends Component {
+class CreateMenuItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            loading: false,
+            visible: false,
         }
     }
 
+    showModal = () => {
+        this.setState({
+            visible: true,
+        });
+    }
+
+    handleOk = () => {
+        this.setState({ loading: true });
+        setTimeout(() => {
+            this.setState({ loading: false, visible: false });
+        }, 3000);
+    }
+
+    handleCancel = () => {
+        this.setState({ visible: false });
+    }
+
     render() {
-        const confirm = Modal.confirm;
-
-        
-        function showConfirm() {
-            confirm({
-              title: 'Do you want to delete these items?',
-              content: <Form.Item><Input /></Form.Item>,
-              onOk() {
-                return new Promise((resolve, reject) => {
-                  setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
-                }).catch(() => console.log('Oops errors!'));
-              },
-              onCancel() {},
-            });
-          }
-
-        return(
-            <Button onClick={showConfirm} 
-            type="primary">
-            Create Menu Item
-          </Button>
+        const { visible, loading } = this.state;
+        return (
+            <div>
+                <Button type="primary" onClick={this.showModal}>
+                    Add Menu Item
+                </Button>
+                <Modal
+                    visible={visible}
+                    maskClosable={false}
+                    title="Add Menu Item"
+                    onOk={this.handleOk}
+                    onCancel={this.handleCancel}
+                    footer={[
+                        <Button key="back" onClick={this.handleCancel}>Cancel</Button>,
+                        <Button key="submit" type="primary" loading={loading} onClick={this.handleOk}>
+                            Create Menu Item
+            </Button>,
+                    ]}
+                >
+                    <Form>
+                        <Form.Item>
+                            <Input placeholder="Name"></Input>
+                        </Form.Item>
+                        <Form.Item>
+                            <Input placeholder="Description"></Input>
+                        </Form.Item>
+                        <Form.Item>
+                            <Input placeholder="Price"></Input>
+                        </Form.Item>
+                        <Form.Item>
+                            <Input placeholder="Picture URL"></Input>
+                        </Form.Item>
+                    </Form>
+                </Modal>
+            </div>
         )
     }
 }
 
-export default withRouter(OwnerCreateMenuItem);
+export default withRouter(CreateMenuItem);
