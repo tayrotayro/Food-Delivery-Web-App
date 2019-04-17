@@ -58,7 +58,7 @@ const rowSelection = {
 
  return(
 
-    <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+    <Table columns={columns} dataSource={data} />
         )
     }
 }

@@ -57,7 +57,7 @@ class DashboardContent extends Component {
                     </div>
                 </Card>
                 <Card title = "Restaurants">
-                    <RestaurantList />
+                   <FeaturedRestaurantCard/>
                 </Card>
             </div>
         )
