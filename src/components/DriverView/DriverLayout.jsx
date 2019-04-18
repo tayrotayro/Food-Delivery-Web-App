@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { message } from 'antd';
 import DriverTabBar from './DriverTabBar';
 import DriverHome from './Home/DriverHomeWrapper';
 import DriverActive from './ActiveOrders/DriverActiveOrdersWrapper';
@@ -15,8 +16,10 @@ class DriverLayout extends Component {
 
     render() {
         if (!localStorage.getItem('loggedInUserId')) {
+            message.error('You have to sign in first to access this page.', 5);
             return <Redirect to="/authentication" />
         }
+
         return (
             <div className="driver-layout-wrapper">
                 <div className="driver-status-bar">

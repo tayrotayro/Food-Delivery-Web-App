@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { message } from 'antd';
 import OwnerTabBar from './OwnerTabBar';
 import { Redirect } from 'react-router-dom';
 import './OwnerLayout.css';
@@ -18,8 +19,10 @@ class OwnerLayout extends Component {
 
     render() {
         if (!localStorage.getItem('loggedInUserId')) {
+            message.error('You have to sign in first to access this page.', 5);
             return <Redirect to="/authentication" />
         }
+
         return (
             <div className="owner-layout-wrapper">
                 <div className="owner-status-bar">
