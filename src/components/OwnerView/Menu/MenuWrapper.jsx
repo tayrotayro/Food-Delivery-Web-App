@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { Card, Button } from 'antd';
+import OwnerRestaurantMenuDropdown from './OwnerRestaurantMenuDropdown';
+import MenuList from './MenuList';
+import CreateMenuItem from "./CreateMenuItem";
 
 class MenuWrapper extends Component {
     constructor(props) {
@@ -8,9 +12,28 @@ class MenuWrapper extends Component {
         }
     }
 
+
+
     render() {
+
+        const ButtonGroup = Button.Group;
+
+
         return (
-            <h1>Owner Menu</h1>
+            <div>
+                <h1 style={{ textAlign: 'center' }}>Owner Menu</h1>
+                <div style={{ padding: '30px', textAlign: 'center' }}>
+                    <OwnerRestaurantMenuDropdown
+                    />
+                </div>
+                <Card title="Restaurant Menu"
+                    extra={<ButtonGroup>
+                        <CreateMenuItem />
+                    </ButtonGroup>}
+                >
+                    <MenuList />
+                </Card>
+            </div>
         )
     }
 }

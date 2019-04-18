@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { message, Row, Col, Button } from 'antd';
+import { message, Row, Col } from 'antd';
 import Spinner from './Spinner';
 import axios from 'axios';
 import '../style/ViewPicker.css';

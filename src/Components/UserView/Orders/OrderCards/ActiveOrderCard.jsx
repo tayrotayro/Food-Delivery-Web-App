@@ -9,8 +9,11 @@ const gridStyle = {
 }
 
 const buttonStyle = {
+  size: "small",
   flexDirection: 'row',
-  AlignItems: 'end',
+  AlignItems: 'right',
+  padding: "15px",
+
 }
 
 class ActiveOrderCard extends Component {
@@ -28,15 +31,13 @@ class ActiveOrderCard extends Component {
       <Card
         type="inner"
         title="Payton-Karno"
-        extra={<Button type="primary">Ready for pickup</Button>}
+        extra={<Button style={{ buttonStyle }} type="primary">Ready for Pickup</Button>}
       >
 
-        <Card.Grid style={{ gridStyle }}><CardInfo /></Card.Grid>
-        <Card.Grid title="Status" style={{ gridStyle }}><ProgressBar /></Card.Grid>
-        <Card.Grid style={{ gridStyle }} >total: $25.00<Button size={"small"}>Ready for Pickup</Button></Card.Grid>
-
+        <Card style={{ gridStyle }}><CardInfo /></Card>
+        <Card style={{ gridStyle }}><ProgressBar /></Card>
+        <Card style={{ gridStyle }}>total: $25.00</Card>
       </Card>
-
 
     )
   }
