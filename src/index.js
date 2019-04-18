@@ -9,6 +9,7 @@ import AuthenticationWrapper from './Components/Authentication/AuthenticationWra
 import UserLayout from './Components/UserView/UserLayout';
 import DriverLayout from './Components/DriverView/DriverLayout';
 import OwnerLayout from './Components/OwnerView/OwnerLayout';
+import ViewPicker from './Components/ViewPicker';
 
 ReactDOM.render(
     <HttpsRedirect>
@@ -36,9 +37,10 @@ ReactDOM.render(
                 <Route path="/owner-create-menu-item" component={OwnerLayout} />
                 {/* AUTHENTICATION ROUTE */}
                 <Route path="/authentication" component={AuthenticationWrapper} />
+                <Route path="/view-picker" component={ViewPicker} />
             </Switch>
         </BrowserRouter>
-    </ HttpsRedirect>
+    </HttpsRedirect>
     , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
