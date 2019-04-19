@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Divider, Card, Collapse } from 'antd';
+import { withRouter } from 'react-router';
+import { Divider, Card, Collapse, Button } from 'antd';
 import axios from 'axios';
 import "./style.css";
+import OwnerProfileCreateRestaurant from '../Profile/OwnerProfileCreateRestaurant';
 
 class OwnerHomeWrapper extends Component {
     constructor(props) {
@@ -26,6 +28,9 @@ class OwnerHomeWrapper extends Component {
             })
     }
 
+    navigateToCreateRestaurant = () => {
+        this.props.history.push('/owner-create-restaurant')
+    }
 
     //use card to render info
 
@@ -38,8 +43,24 @@ class OwnerHomeWrapper extends Component {
         return (
             <div className="owner-home">
                 <h1>Owner Home</h1>
-                <Divider >My Restaurants</Divider>
+                <Divider>My Restaurants</Divider>
                 {
+                    this.state.restaurants === null
+                    &&
+                    <div className="no-restaurants">
+                        <h1>YOU HAVE NO RESTAURANTS!</h1>
+                        <Button type="primary"
+                        style={{width: "250px"}}
+                            size="large"
+                            block
+                            onClick={this.navigateToCreateRestaurant}>
+                            Add New Restaurant
+                        </Button>
+                    </div>
+                }
+                {
+                    this.state.restaurants != null
+                    &&
                     this.state.restaurants.map(restaurant => {
                         return (
                             <div className="restaurant-cards">
@@ -80,4 +101,4 @@ class OwnerHomeWrapper extends Component {
 
 }
 
-export default OwnerHomeWrapper;
+export default withRouter(OwnerHomeWrapper);
