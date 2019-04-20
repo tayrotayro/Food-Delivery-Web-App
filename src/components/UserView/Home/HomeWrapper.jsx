@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Row, Col, Spin } from 'antd';
+import { Card } from 'antd';
 import '../../../style/Dashboard.css';
-import FeaturedRestaurantCard from './FeaturedRestaurantCard';
+import Spinner from '../../Spinner';
 import RestaurantList from '../../UserView/Home/RestaurantList';
 
 const { Meta } = Card;
@@ -28,9 +28,7 @@ class DashboardContent extends Component {
 
     render() {
         if (this.state.loading) {
-            return <div className="spinner-wrapper">
-                <Spin size="large" />
-            </div>
+            return <Spinner />
         }
 
         return (
@@ -56,7 +54,7 @@ class DashboardContent extends Component {
                         </div>
                     </div>
                 </Card>
-                <Card title = "Restaurants">
+                <Card title="Restaurants">
                     <RestaurantList />
                 </Card>
             </div>

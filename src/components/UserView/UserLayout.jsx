@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { message } from 'antd';
 import CartWrapper from './Cart/CartWrapper';
 import HomeWrapper from './Home/HomeWrapper';
 import OrderWrapper from './Orders/OrderWrapper';
@@ -17,8 +18,10 @@ class UserLayout extends Component {
 
     render() {
         if (!localStorage.getItem('loggedInUserId')) {
+            message.error('You have to sign in first to access this page.', 5);
             return <Redirect to="/authentication" />
         }
+
         return (
             <div className="user-layout-wrapper">
                 <div className="user-content">
