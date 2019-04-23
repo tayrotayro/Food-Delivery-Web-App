@@ -28,7 +28,7 @@ class FeaturedRestaurantCard extends Component {
                 <div>
                     {Price} | {Description}
                 </div>
-               {/* <Button type = 'primary'>View Menu</Button> */}
+               
                
             </Card>
 
