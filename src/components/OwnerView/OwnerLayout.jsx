@@ -17,9 +17,9 @@ class OwnerLayout extends Component {
     }
 
     render() {
-        if (!localStorage.getItem('loggedInUserId')) {
-            return <Redirect to="/authentication" />
-        }
+        // if (!localStorage.getItem('loggedInUserId')) {
+        //     return <Redirect to="/authentication" />
+        // }
         return (
             <div className="owner-layout-wrapper">
                 <div className="owner-status-bar">
