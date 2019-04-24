@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card } from 'antd';
-import ActiveOrderCard from '../../UserView/Orders/OrderCards/ActiveOrderCard';
+import OwnerRestaurantMenuDropdown from '../Menu/OwnerRestaurantMenuDropdown';
+import OwnerActiveOrderCard from '../../OwnerView/ActiveOrders/OwnerActiveOrderCard';
 
 class OwnerActiveOrderWrapper extends Component {
     constructor(props) {
@@ -13,7 +14,11 @@ class OwnerActiveOrderWrapper extends Component {
     render() {
         return (
             <Card title = "Active Orders">
-                <ActiveOrderCard />
+                <div style = {{padding: '15px', textAlign: 'center'}}>
+                <OwnerRestaurantMenuDropdown/>
+                </div>
+                
+                <OwnerActiveOrderCard />
             </Card>
             
         )

@@ -15,7 +15,7 @@ const Price = '$$';
 const Status = 'Active'
 
 
-class DriverActiveOrderCard extends Component {
+class OwnerActiveOrderCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,7 +28,7 @@ class DriverActiveOrderCard extends Component {
 
     return (
 
-      <Card size ='small' title = 'Payton Karno' extra ={<Button style={buttonStyle} type = 'primary'>Delivered</Button>}>
+      <Card size ='small' title = 'Payton Karno' extra ={<Button style={buttonStyle} type = 'primary'>Ready for pickup</Button>}>
       
       <div style={{direction: 'flex', flexDirection: 'row'}}>
       <h3>Contents:</h3><p>{content}</p>
@@ -44,4 +44,4 @@ class DriverActiveOrderCard extends Component {
   }
 }
 
-export default DriverActiveOrderCard;
+export default OwnerActiveOrderCard;

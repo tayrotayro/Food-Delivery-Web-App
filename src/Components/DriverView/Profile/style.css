@@ -1,0 +1,31 @@
+.profile-wrapper {
+    text-align: center;
+}
+
+.create-restaurant {
+    text-align: center;
+}
+
+.create-button-submit {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.create-button-cancel {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.restaruant-hours {
+    padding: 10px;
+}
+
+.owner-tab-bar {
+    padding-top: 60px;
+}

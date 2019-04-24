@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Collapse, Card, Row } from 'antd';
-import { Icon } from 'antd-mobile';
+import { Button, Card } from 'antd';
 
 
 const buttonStyle={
@@ -12,10 +11,10 @@ AlignItems: 'right',
 
 const content = 'this is where all your order information goes.';
 const Price = '$$';
-const Status = 'Active'
+const Status = 'Available for Pickup'
 
 
-class DriverActiveOrderCard extends Component {
+class DriverAvailableOrderCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,7 +27,7 @@ class DriverActiveOrderCard extends Component {
 
     return (
 
-      <Card size ='small' title = 'Payton Karno' extra ={<Button style={buttonStyle} type = 'primary'>Delivered</Button>}>
+      <Card size ='small' title = 'Payton Karno' extra ={<Button style={buttonStyle} type = 'primary'>Accept Order</Button>}>
       
       <div style={{direction: 'flex', flexDirection: 'row'}}>
       <h3>Contents:</h3><p>{content}</p>
@@ -44,4 +43,4 @@ class DriverActiveOrderCard extends Component {
   }
 }
 
-export default DriverActiveOrderCard;
+export default DriverAvailableOrderCard;
