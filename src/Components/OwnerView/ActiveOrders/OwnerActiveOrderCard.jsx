@@ -28,7 +28,7 @@ class OwnerActiveOrderCard extends Component {
 
     return (
 
-      <Card title = 'Payton Karno' extra ={<Button style={buttonStyle} type = 'primary'>Ready for pickup</Button>}>
+      <Card size ='small' title = 'Payton Karno' extra ={<Button style={buttonStyle} type = 'primary'>Ready for pickup</Button>}>
       
       <div style={{direction: 'flex', flexDirection: 'row'}}>
       <h3>Contents:</h3><p>{content}</p>

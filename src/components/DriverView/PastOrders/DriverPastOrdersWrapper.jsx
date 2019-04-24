@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DriverPastOrderCard from './DriverPastOrderCard';
 
 class DriverPastOrderWrapper extends Component {
     constructor(props) {
@@ -10,7 +11,11 @@ class DriverPastOrderWrapper extends Component {
 
     render() {
         return (
+            <div>
             <h1>Driver Past Orders</h1>
+
+            <DriverPastOrderCard/>
+        </div>
         )
     }
 }

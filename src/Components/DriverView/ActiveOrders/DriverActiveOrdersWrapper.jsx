@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DriverActiveOrderCard from './DriverActiveOrderCard';
 
 class DriverActiveOrderWrapper extends Component {
     constructor(props) {
@@ -10,7 +11,11 @@ class DriverActiveOrderWrapper extends Component {
 
     render() {
         return (
-            <h1>Driver Active Orders</h1>
+             <div>
+                <h1 style = {{textAlign: 'center'}}>Driver Active Orders</h1>
+           
+                <DriverActiveOrderCard />
+            </div>
         )
     }
 }
