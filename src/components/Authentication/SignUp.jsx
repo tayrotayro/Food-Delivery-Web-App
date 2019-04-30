@@ -128,7 +128,7 @@ class SignUpForm extends Component {
                         )}
                     </Form.Item>
                     <div className="sign-up-button">
-                        <Button type="primary" onClick={this.submit}>Sign Up</Button>
+                        <Button type="primary" onClick={this.sendSignUpRequest}>Sign Up</Button>
                     </div>
                 </Form>
             </div>

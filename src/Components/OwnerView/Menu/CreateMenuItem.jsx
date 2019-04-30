@@ -8,8 +8,28 @@ class CreateMenuItem extends Component {
         this.state = {
             loading: false,
             visible: false,
+            name: "",
+            description: "",
+            price: 0,
+            pictureUrl: "",
+            menuId: "",
         }
     }
+// menuId = this.props.
+
+//     createitem = () => {
+//         axios.post('http://localhost:5000/api/menu-item')
+//             .then(response => {
+//                 console.log(response);
+//                 this.setState({
+//                     menuId: this.props.response.data.data.menuId
+//                 })
+//             })
+//             .catch(err => {
+//                 console.log(err);
+//             })
+
+//     }
 
     showModal = () => {
         this.setState({
@@ -50,16 +70,40 @@ class CreateMenuItem extends Component {
                 >
                     <Form>
                         <Form.Item>
-                            <Input placeholder="Name"></Input>
+                            <Input placeholder="Name" required
+                                style={{ width: '300px' }}
+                                onChange={(result) => {
+                                    this.setState({
+                                        name: result.target.value
+                                    })
+                                }} />
                         </Form.Item>
                         <Form.Item>
-                            <Input placeholder="Description"></Input>
+                            <Input placeholder="Description" required
+                                style={{ width: '300px' }}
+                                onChange={(result) => {
+                                    this.setState({
+                                        description: result.target.value
+                                    })
+                                }} />
                         </Form.Item>
                         <Form.Item>
-                            <Input placeholder="Price"></Input>
+                            <Input placeholder="Price" required
+                                style={{ width: '300px' }}
+                                onChange={(result) => {
+                                    this.setState({
+                                        price: result.target.value
+                                    })
+                                }} />
                         </Form.Item>
                         <Form.Item>
-                            <Input placeholder="Picture URL"></Input>
+                            <Input placeholder="Picture Url" required
+                                style={{ width: '300px' }}
+                                onChange={(result) => {
+                                    this.setState({
+                                        pictureUrl: result.target.value
+                                    })
+                                }} />
                         </Form.Item>
                     </Form>
                 </Modal>

@@ -32,11 +32,11 @@ class SignInForm extends Component {
                 error: true
             })
         } else {
-            axios
-                .post(`http://localhost:5000/api/signin`, {
-                    email: this.state.email,
-                    password: this.state.password
-                })
+
+            axios.post(`http://localhost:5000/api/signin`, {
+                email: this.state.email,
+                password: this.state.password
+            })
                 .then(response => {
                     if (response.data.error) {
                         this.setState({ error: true, errorMessage: response.data.error })
