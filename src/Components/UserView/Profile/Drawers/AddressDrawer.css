@@ -1,0 +1,30 @@
+.address-drawer .ant-drawer-content-wrapper {
+    width: 375px !important;
+}
+
+.address-drawer .ant-drawer-header {
+    padding: 0px;
+}
+
+.empty-drawer {
+    font-weight: 300;
+    font-size: 16px;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-drawer-icon {
+    font-size: 136px;
+    color: #d9d9d9;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 767px) {
+    .address-drawer .ant-drawer-content-wrapper {
+        width: 100vw !important;
+    }
+}

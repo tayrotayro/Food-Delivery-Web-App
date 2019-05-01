@@ -1,0 +1,13 @@
+.payment-drawer .ant-drawer-content-wrapper {
+    width: 375px !important;
+}
+
+.payment-drawer .ant-drawer-header {
+    padding: 0px;
+}
+
+@media screen and (max-width: 767px) {
+    .payment-drawer .ant-drawer-content-wrapper {
+        width: 100vw !important;
+    }
+}

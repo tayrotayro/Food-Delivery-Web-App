@@ -1,0 +1,17 @@
+.security-drawer .ant-drawer-content-wrapper {
+    width: 375px !important;
+}
+
+.security-drawer .ant-drawer-header {
+    padding: 0px;
+}
+
+.security-drawer .ant-form-item {
+    margin-bottom: 8px;
+}
+
+@media screen and (max-width: 767px) {
+    .security-drawer .ant-drawer-content-wrapper {
+        width: 100vw !important;
+    }
+}
