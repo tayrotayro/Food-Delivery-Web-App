@@ -29,20 +29,30 @@ class FeaturedRestaurantCard extends Component {
         return (
             <div>
                 {
-                    this.state.restaurant.map(restaurant => 
-                        
+                    this.state.restaurant === null
+                    &&
+                    <div>
+                        <h1>No restaurants in your area</h1>
+                    </div>
+                }
+                {
+                    this.state.restaurant === !null
+                    &&
+                    this.state.restaurant.map(restaurants => {
+                        return (
                             <Card
                                 hoverable
                                 style={{ width: "240px", padding: "20px" }}
-                                cover={<img alt="example" src={restaurant.pictureURL} />}
+                                cover={<img alt="example" src={restaurants.pictureURL} />}
                                 actions={[<Button>view website</Button>, <Button type='primary'>view menu</Button>]}
                             >
-                                <div>{restaurant.name}</div>
+                                <div>{restaurants.name}</div>
                                 <div>
-                                    {restaurant.price} | {restaurant.description}
+                                    {restaurants.price} | {restaurants.description}
                                 </div>
                             </Card>
-                    
+                        )
+                    }
                     )
                 }
             </div>

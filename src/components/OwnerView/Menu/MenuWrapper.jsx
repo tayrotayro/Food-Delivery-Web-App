@@ -28,6 +28,8 @@ class MenuWrapper extends Component {
             })
     }
 
+    
+
     render() {
 
         const ButtonGroup = Button.Group;
@@ -37,7 +39,7 @@ class MenuWrapper extends Component {
                     this.state.restaurants === null
                     &&
                     <div>
-                        <h1>You have NO restaurants!</h1>
+                        <h1>You have NO Menu Items!</h1>
                     </div>
                 }
                 {
@@ -46,17 +48,16 @@ class MenuWrapper extends Component {
                     this.state.restaurants.map(restaurant => {
                         return (
                             <div>
-                                <h1 style={{ textAlign: 'center' }}>Owner Menu</h1>
+                                <h1 style={{ textAlign: 'center' }}>{restaurant.name} Menu</h1>
                                 <div style={{ padding: '30px', textAlign: 'center' }}>
-                                    <OwnerRestaurantMenuDropdown
-                                    />
+                            
                                 </div>
                                 <Card title="Restaurant Menu"
                                     extra={<ButtonGroup>
                                         <CreateMenuItem />
                                     </ButtonGroup>}
                                 >
-                                    <MenuList />
+                                    <MenuList restaurant={this.state.restaurants} />
                                 </Card>
                             </div>
                         )
