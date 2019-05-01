@@ -1,0 +1,45 @@
+.order-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 16px 24px;
+}
+
+.order-item-wrapper:hover {
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
+
+.order-item-quantity {
+    width: 50px;
+}
+
+.order-item-details {
+    flex: 1;
+    padding: 0px 16px;
+}
+
+.order-item-details h3 {
+    margin: 4px 0px 8px 0px;
+}
+
+.order-item-details p {
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+
+.order-item-details .remove-item-button-wrapper {
+    margin-top: 8px;
+}
+
+.order-item-details .remove-item-button {
+    color: #f5222d;
+    font-weight: 500;
+}
+
+.order-item-details .remove-item-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

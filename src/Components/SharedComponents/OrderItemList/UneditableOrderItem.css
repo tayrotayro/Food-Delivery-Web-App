@@ -1,0 +1,23 @@
+.uneditable-order-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.uneditable-order-item-details {
+    flex: 1;
+}
+
+.uneditable-order-item-details h3 {
+    margin: 4px 8px 8px 0px;
+    display: inline-block;
+}
+
+.uneditable-order-item-details p {
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 0px;
+}
