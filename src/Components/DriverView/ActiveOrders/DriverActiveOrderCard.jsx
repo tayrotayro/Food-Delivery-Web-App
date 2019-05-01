@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Button, Collapse, Card, Row } from 'antd';
 import { Icon } from 'antd-mobile';
+import './style.css';
 
-
-const buttonStyle={
-size:"small",
-flexDirection: 'row',
-AlignItems: 'right',
+const buttonStyle = {
+  size: "small",
+  flexDirection: 'row',
+  AlignItems: 'right',
 
 }
 
@@ -27,19 +27,19 @@ class DriverActiveOrderCard extends Component {
   render() {
 
     return (
+      <Card>
+        <Card size='small' style={{ margin: "20px" }} title='Payton Karno' extra={<Button style={buttonStyle} type='primary'>Delivered</Button>}>
 
-      <Card size ='small' title = 'Payton Karno' extra ={<Button style={buttonStyle} type = 'primary'>Delivered</Button>}>
-      
-      <div style={{direction: 'flex', flexDirection: 'row'}}>
-      <h3>Contents:</h3><p>{content}</p>
-      </div>
+          <div className="content" style={{ display: 'flex', flexDirection: 'row' }}>
+            <h3>Contents:</h3><p>{content}</p>
 
-      <h3>Status: </h3><p>{Status}</p>
-      
-      <h3>Price: </h3><p>{Price}</p>
-    </Card>  
+            <h3>Status: </h3><p>{Status}</p>
 
-        
+            <h3>Price: </h3><p>{Price}</p>
+          </div>
+        </Card>
+      </Card>
+
     )
   }
 }
