@@ -3,6 +3,7 @@ import { Icon } from 'antd';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import 'antd-mobile/dist/antd-mobile.css';
+import '../../style/TabBar.css';
 
 class OwnerTabBar extends Component {
     constructor(props) {
@@ -34,19 +35,17 @@ class OwnerTabBar extends Component {
         return (
             <div style={{ position: 'fixed', width: '100%', bottom: 0 }}>
                 <TabBar
-                    unselectedTintColor="#949494"
-                    tintColor="#33A3F4"
+                    unselectedTintColor="#595959"
+                    tintColor="#1890ff"
                     barTintColor="white"
-                    tabBarPosition="bottom"
-                // hidden={this.state.hidden}
-                // tabBarPosition="bottom"
+                    hidden={this.state.hidden}
                 >
                     <TabBar.Item
                         icon={
-                            <Icon type="home" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="home" />
                         }
                         selectedIcon={
-                            <Icon type="home" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="home" />
                         }
                         title="Home"
                         key="Home"
@@ -63,10 +62,10 @@ class OwnerTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="file-markdown" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="file-markdown" />
                         }
                         selectedIcon={
-                            <Icon type="file-markdown" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="file-markdown" />
                         }
                         title="Menu"
                         key="Search"
@@ -83,14 +82,13 @@ class OwnerTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="inbox" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="inbox" />
                         }
                         selectedIcon={
-                            <Icon type="inbox" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="inbox" />
                         }
                         title="Active Orders"
                         key="Orders"
-                        badge={1}
                         selected={this.state.selectedTab === 'ownerActiveTab'}
                         onPress={() => {
                             this.setState({
@@ -103,10 +101,10 @@ class OwnerTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="schedule" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="schedule" />
                         }
                         selectedIcon={
-                            <Icon type="schedule" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="schedule" />
                         }
                         title="Past Orders"
                         key="Cart"
@@ -123,10 +121,10 @@ class OwnerTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="user" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="user" />
                         }
                         selectedIcon={
-                            <Icon type="user" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="user" />
                         }
                         title="Profile"
                         key="Profile"
