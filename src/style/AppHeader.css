@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Kalam');
+.app-header-wrapper {
+    height: 65px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 16px;
+    background-color: white;
+    border-bottom: 1px solid #d9d9d9;
+    z-index: 1;
+}
+
+.app-header-wrapper .app-header-logo {
+    font-family: 'Kalam', cursive;
+    color: #595959;
+    font-size: 32px;
+    padding-top: 8px;
+}
+
+.app-header-wrapper .app-header-avatar {
+    background-color: #1890ff;
+    font-size: 16px;
+}
+
+.app-header-wrapper .app-header-avatar:hover {
+    cursor: pointer;
+}
