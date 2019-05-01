@@ -22,6 +22,7 @@ class SignInForm extends Component {
     }
 
     submit = (event) => {
+        console.log('a')
         event.preventDefault(); // Stop the page from refreshing
         if (this.state.email === "") {
             this.setState({
