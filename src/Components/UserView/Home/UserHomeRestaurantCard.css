@@ -1,0 +1,40 @@
+.user-home-restaurant-card {
+    width: 100%;
+    margin-bottom: 24px;
+    background-color: #fafafa;
+}
+
+.user-home-restaurant-card:hover {
+    cursor: pointer;
+}
+
+.user-home-restaurant-card .ant-card-cover img {
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.user-home-restaurant-card .ant-card-cover img:hover {
+    transform: translateY(-5px);
+}
+
+.user-home-restaurant-card .ant-card-body {
+    padding: 12px 0px;
+}
+
+.user-home-restaurant-card .restaurant-title {
+    font-size: 16px;
+    color: black;
+}
+
+.user-home-restaurant-card .restaurant-subtitle {
+    color: #8c8c8c;
+    font-weight: 300;
+}
+
+.user-home-restaurant-card .ant-rate {
+    font-size: 15px;
+}
+
+.user-home-restaurant-card .ant-rate-star {
+    margin-right: 2px;
+}

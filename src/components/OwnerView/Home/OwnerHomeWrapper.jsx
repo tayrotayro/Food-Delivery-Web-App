@@ -34,6 +34,13 @@ class OwnerHomeWrapper extends Component {
         const { Meta } = Card;
         const Panel = Collapse.Panel;
 
+        if (!this.state.restaurants || this.state.restaurants.length === 0) {
+            return (
+                <div className="empty-owner-restaurant-list">
+
+                </div>
+            )
+        }
 
         return (
             <div className="owner-home">

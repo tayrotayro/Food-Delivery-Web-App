@@ -1,0 +1,178 @@
+.search-wrapper .ant-input {
+    border-radius: 30px;
+}
+
+.search-suggestion {
+    padding: 24px 0px;
+    font-weight: 300;
+    font-size: 16px;
+    color: black;
+}
+
+.search-suggestion h2 {
+    color: #8c8c8c;
+    font-weight: 300;
+    margin: 8px 0px 8px 0px;
+}
+
+.search-box-option {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0px;
+}
+
+.search-box-option:hover {
+    cursor: pointer;
+}
+
+.search-box-option::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 8;
+    width: calc(100% - 16px);
+    height: 100%;
+    filter: brightness(55%);
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.search-box-option:hover::before {
+    filter: brightness(90%);
+}
+
+.search-box-option-text {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+}
+
+.search-fast-food::before {
+    background: url('../../../images/search/fast-food-2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-american::before {
+    background: url('../../../images/search/american-food.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-healthy::before {
+    background: url('../../../images/search/healthy-food-2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-pizza::before {
+    background: url('../../../images/search/pizza.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-wings::before {
+    background: url('../../../images/search/wings.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-sandwiches::before {
+    background: url('../../../images/search/sandwiches.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-asian::before {
+    background: url('../../../images/search/asian.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-bnb::before {
+    background: url('../../../images/search/bnb.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-bbq::before {
+    background: url('../../../images/search/bbq.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-burgers::before {
+    background: url('../../../images/search/burgers.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-cajun::before {
+    background: url('../../../images/search/cajun.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-comfort::before {
+    background: url('../../../images/search/comfort.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-japanese::before {
+    background: url('../../../images/search/sushi.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-mediterranean::before {
+    background: url('../../../images/search/mediterranean-2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-mexican::before {
+    background: url('../../../images/search/mexican.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-salads::before {
+    background: url('../../../images/search/salads.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-southern::before {
+    background: url('../../../images/search/southern.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-thai::before {
+    background: url('../../../images/search/thai.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
