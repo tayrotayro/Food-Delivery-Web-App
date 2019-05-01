@@ -1,4 +1,4 @@
-import { Card } from 'antd';
+import { Card, Button, Icon } from 'antd';
 import React, { Component } from 'react';
 
 class FeaturedRestaurantCard extends Component {
@@ -11,15 +11,25 @@ class FeaturedRestaurantCard extends Component {
 
 
     render() {
+
+        const Price = "$$";
+        const Description = "description";
+
+
+
         return (
             <Card
                 hoverable
                 style={{ width: 240 }}
                 cover={<img alt="example" src="https://citygroceryonline.com/wp-content/uploads/2015/05/boure-logo.png" />}
-            >
-                <Card
-                    title="Boure'"
-                >Upscale dining on the Square.</Card>
+                actions = {[<Button>view website</Button>,<Button type = 'primary'>view menue</Button>]}
+          >
+          <div>Boure'</div>
+                <div>
+                    {Price} | {Description}
+                </div>
+               
+               
             </Card>
 
         )

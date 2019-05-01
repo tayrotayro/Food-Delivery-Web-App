@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { message } from 'antd';
 import DriverTabBar from './DriverTabBar';
-import DriverHome from './Home/DriverHomeWrapper';
+import DriverHome from '../DriverView/AvailableOrders/DriverAvailableOrderWrapper';
 import DriverActive from './ActiveOrders/DriverActiveOrdersWrapper';
 import DriverPast from './PastOrders/DriverPastOrdersWrapper';
 import DriverProfile from './Profile/DriverProfileWrapper';

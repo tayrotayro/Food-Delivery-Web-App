@@ -25,3 +25,7 @@
     flex-direction: column;
     padding: 5px;
 }
+
+.no-restaurants {
+    padding: 20px;
+}
