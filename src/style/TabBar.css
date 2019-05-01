@@ -1,0 +1,34 @@
+.am-tab-bar-bar {
+    height: 65px;
+}
+
+.am-tab-bar-bar .am-tab-bar-tab:hover {
+    cursor: pointer;
+}
+
+.am-tab-bar-bar .am-tab-bar-tab-icon {
+    font-size: 25px;
+    height: 28px;
+}
+
+.am-tab-bar-bar .am-tab-bar-tab-title {
+    font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+    .am-tab-bar-bar {
+        padding: 0px 20vw;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .am-tab-bar-bar {
+        padding: 0px 25vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .am-tab-bar-bar {
+        padding: 0px 30vw;
+    }
+}

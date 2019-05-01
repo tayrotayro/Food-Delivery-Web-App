@@ -1,0 +1,30 @@
+.cart-review-card {
+    margin: 24px 0px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+.cart-review-card .ant-card-head {
+    font-size: 22px;
+}
+
+.cart-review-card .ant-card-head small {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.cart-review-card .ant-card-body {
+    padding: 0px;
+}
+
+/* steps icon */
+
+.cart-wrapper .ant-steps-item-custom .ant-steps-item-icon>.ant-steps-icon {
+    font-size: 30px;
+}
+
+.steps-action-next-button {
+    display: inline-block;
+    float: right;
+}

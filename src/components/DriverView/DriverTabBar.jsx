@@ -19,7 +19,7 @@ class OwnerTabBar extends Component {
 
         if (pathname === "/driver-home") {
             this.setState({ selectedTab: "driverHomeTab" })
-        }  else if (pathname === '/driver-active') {
+        } else if (pathname === '/driver-active') {
             this.setState({ selectedTab: "driverActiveTab" })
         } else if (pathname === '/driver-past') {
             this.setState({ selectedTab: "driverPastTab" })
@@ -32,18 +32,17 @@ class OwnerTabBar extends Component {
         return (
             <div style={{ position: 'fixed', width: '100%', bottom: 0 }}>
                 <TabBar
-                    unselectedTintColor="#949494"
-                    tintColor="#33A3F4"
+                    unselectedTintColor="#595959"
+                    tintColor="#1890ff"
                     barTintColor="white"
-                // hidden={this.state.hidden}
-                // tabBarPosition="bottom"
+                    hidden={this.state.hidden}
                 >
                     <TabBar.Item
                         icon={
-                            <Icon type="home" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="home" />
                         }
                         selectedIcon={
-                            <Icon type="home" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="home" />
                         }
                         title="Home"
                         key="Home"
@@ -60,10 +59,10 @@ class OwnerTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="inbox" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="inbox" />
                         }
                         selectedIcon={
-                            <Icon type="inbox" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="inbox" />
                         }
                         title="Active Orders"
                         key="Orders"
@@ -80,10 +79,10 @@ class OwnerTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="schedule" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="schedule" />
                         }
                         selectedIcon={
-                            <Icon type="schedule" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="schedule" />
                         }
                         title="Past Orders"
                         key="Cart"
@@ -100,10 +99,10 @@ class OwnerTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="user" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="user" />
                         }
                         selectedIcon={
-                            <Icon type="user" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="user" />
                         }
                         title="Profile"
                         key="Profile"

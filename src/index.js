@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HttpsRedirect from 'react-https-redirect';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import AuthenticationWrapper from './Components/Authentication/AuthenticationWrapper';
 import UserLayout from './Components/UserView/UserLayout';

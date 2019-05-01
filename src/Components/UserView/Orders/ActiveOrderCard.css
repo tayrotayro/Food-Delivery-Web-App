@@ -1,0 +1,115 @@
+.user-active-order-card {
+    border-radius: 16px;
+    margin-bottom: 36px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+.user-active-order-card .ant-card-head {
+    font-size: 22px;
+}
+
+.user-active-order-card .ant-tag {
+    margin: 0px;
+    font-size: 14px;
+    height: 28px;
+    line-height: 26px;
+}
+
+.user-active-order-card .order-step {
+    margin: 8px 0px 16px 0px;
+}
+
+/* vertical line */
+
+.ant-steps-vertical>.ant-steps-item>.ant-steps-item-tail::after {
+    width: 2px;
+}
+
+/* horizontal line */
+
+.ant-steps-item-title::after {
+    height: 2px;
+}
+
+.ant-steps-item-process>.ant-steps-item-content>.ant-steps-item-title::after {
+    background-color: #f5f5f5;
+}
+
+.ant-steps-item-wait>.ant-steps-item-content>.ant-steps-item-title::after {
+    background-color: #f5f5f5;
+}
+
+/* step icon & text */
+
+.ant-steps-item-wait .ant-steps-item-icon>.ant-steps-icon {
+    color: #d9d9d9;
+}
+
+.ant-steps-item-custom .ant-steps-item-icon>.ant-steps-icon {
+    font-size: 26px;
+}
+
+.ant-steps-item-finish>.ant-steps-item-content>.ant-steps-item-title {
+    font-weight: 500;
+}
+
+.ant-steps-item-process>.ant-steps-item-content>.ant-steps-item-title {
+    font-weight: 700;
+    /* color: #1890ff; */
+}
+
+.ant-steps-item-wait>.ant-steps-item-content>.ant-steps-item-title {
+    color: #d9d9d9;
+    font-weight: 300;
+}
+
+.ant-steps-item-wait>.ant-steps-item-content>.ant-steps-item-description {
+    color: #d9d9d9;
+    font-weight: 300;
+}
+
+/* Collapse Panel */
+
+.user-active-order-card .user-active-order-card-panel {
+    border: 0px;
+}
+
+.user-active-order-card .ant-collapse>.ant-collapse-item>.ant-collapse-header .ant-collapse-arrow {
+    left: 0;
+    font-size: 16px;
+}
+
+.user-active-order-card .ant-collapse>.ant-collapse-item>.ant-collapse-header {
+    padding: 12px 0 12px 24px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.user-active-order-card .ant-collapse-content>.ant-collapse-content-box {
+    padding: 0px 8px 16px 24px;
+}
+
+.user-active-order-card .user-active-order-card-panel h3 {
+    font-weight: 500;
+}
+
+/* Dense Divider */
+
+.user-active-order-card .dense {
+    margin: 8px 0px 16px 0px;
+}
+
+.user-active-order-card .dense-2 {
+    margin: 22px 0px 16px 0px;
+}
+
+/* Order Card Summary */
+
+.user-active-order-card .order-card-address {
+    font-weight: 300;
+}
+
+.user-active-order-card .order-card-phone {
+    margin-top: 16px;
+    font-weight: 300;
+}

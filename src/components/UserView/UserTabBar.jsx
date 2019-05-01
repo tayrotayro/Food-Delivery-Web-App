@@ -3,6 +3,7 @@ import { Icon } from 'antd';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import 'antd-mobile/dist/antd-mobile.css';
+import '../../style/TabBar.css';
 
 class UserTabBar extends Component {
     constructor(props) {
@@ -15,6 +16,13 @@ class UserTabBar extends Component {
     }
 
     componentDidMount() {
+        this.updateChoosenTab();
+        this.props.history.listen(() => {
+            this.updateChoosenTab();
+        });
+    }
+
+    updateChoosenTab = () => {
         const pathname = this.props.history.location.pathname;
 
         if (pathname === "/") {
@@ -32,20 +40,19 @@ class UserTabBar extends Component {
 
     render() {
         return (
-            <div style={{ position: 'fixed', width: '100%', bottom: 0 }}>
+            <div style={{ position: 'fixed', width: '100%', bottom: 0, zIndex: 10 }}>
                 <TabBar
-                    unselectedTintColor="#949494"
-                    tintColor="#33A3F4"
+                    unselectedTintColor="#595959"
+                    tintColor="#1890ff"
                     barTintColor="white"
-                // hidden={this.state.hidden}
-                // tabBarPosition="bottom"
+                    hidden={this.state.hidden}
                 >
                     <TabBar.Item
                         icon={
-                            <Icon type="home" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="home" />
                         }
                         selectedIcon={
-                            <Icon type="home" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="home" />
                         }
                         title="Home"
                         key="Home"
@@ -62,10 +69,10 @@ class UserTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="search" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="search" />
                         }
                         selectedIcon={
-                            <Icon type="search" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="search" />
                         }
                         title="Search"
                         key="Search"
@@ -82,14 +89,15 @@ class UserTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="ordered-list" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="ordered-list" />
                         }
                         selectedIcon={
-                            <Icon type="ordered-list" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="ordered-list" />
                         }
                         title="Orders"
                         key="Orders"
-                        badge={1}
+                        // badge={1}
+                        // dot
                         selected={this.state.selectedTab === 'orderTab'}
                         onPress={() => {
                             this.setState({
@@ -102,10 +110,10 @@ class UserTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="shopping-cart" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="shopping-cart" />
                         }
                         selectedIcon={
-                            <Icon type="shopping-cart" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="shopping-cart" />
                         }
                         title="Cart"
                         key="Cart"
@@ -122,10 +130,10 @@ class UserTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="user" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="user" />
                         }
                         selectedIcon={
-                            <Icon type="user" style={{ fontSize: '22px', height: '25px' }} />
+                            <Icon type="user" />
                         }
                         title="Profile"
                         key="Profile"

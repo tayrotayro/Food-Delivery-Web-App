@@ -1,0 +1,25 @@
+.order-item-list-wrapper .with-padding {
+    padding: 24px 24px;
+}
+
+.order-item-list-wrapper .no-padding {
+    padding: 0px;
+}
+
+.order-item-list-wrapper .order-breakdown-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 300;
+}
+
+.order-item-list-wrapper .order-breakdown-total {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    color: black;
+    font-size: 20px;
+}

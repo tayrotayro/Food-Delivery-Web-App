@@ -1,14 +1,33 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500,700,900');
+@import '~antd/dist/antd.css';
+/* body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+} */
+
+body {
+  font-family: 'Raleway', sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+button, input {
+  font-family: 'Raleway', sans-serif !important;
+}
+
+/* Ant Drawer Global Change */
+
+.ant-drawer-wrapper-body {
+  background-color: #fafafa;
+}
+
+.ant-drawer-right.ant-drawer-open .ant-drawer-content-wrapper {
+  box-shadow: -2px 0 16px rgba(0, 0, 0, 0.35);
 }

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'antd';
+import { Row, Col } from 'antd';
+import '../../../style/Dashboard.css';
 import Spinner from '../../Spinner';
+import UserHomeRestaurantCard from './UserHomeRestaurantCard';
+import RestaurantList from '../../UserView/Home/RestaurantList';
 import axios from 'axios';
-
 
 class DashboardContent extends Component {
     constructor(props) {
@@ -40,38 +42,44 @@ class DashboardContent extends Component {
         }
     
         return (
-            <div className="card">
-            <Card>
-             <div>
-                {
-                    this.state.restaurants === null
-                    &&
-                    <div>
-                        <h1>No restaurants in your area</h1>
-                    </div>
-                }
-                {
-                    this.state.restaurants != null
-                    &&
-                    this.state.restaurants.map(restaurant => {
-                        return (
-                            <Card
-                                hoverable
-                                style={{ width: "240px", padding: "20px" }}
-                                cover={<img alt="example" src={restaurant.pictureURL} />}
-                                actions={[<Button>view website</Button>, <Button type='primary'>view menu</Button>]}
-                            >
-                                <div>{restaurant.name}</div>
-                                <div>
-                                    {restaurant.price} | {restaurant.description}
-                                </div>
-                            </Card>
-                        )
+            <div className="dasboard-content-wrapper">
+                <h1>Popular</h1>
+                <Row gutter={{ xs: 0, sm: 16, md: 32, lg: 32, xl: 32 }}>
+                    {
+                        [1, 2, 3].map(number => {
+                            return (
+                                <Col xs={24} sm={12} md={8} lg={8} xl={8}>
+                                    <UserHomeRestaurantCard />
+                                </Col>
+                            )
+                        })
                     }
-                    )
-                }
-            </div>
-            </Card>
+                </Row>
+                <h1>Open Now</h1>
+                {/* <Card title="Featured Restaurants" >
+                    <div style={{ background: '#ECECEC', padding: '30px' }}>
+                        <div className="content-cards">
+                            <Row gutter={10}>
+                                <Col xs={{ span: 11, offset: 1 }} lg={{ span: 7, offset: 1 }}>
+                                    <FeaturedRestaurantCard />
+                                </Col>
+                                <Col xs={{ span: 11, offset: 1 }} lg={{ span: 7, offset: 1 }}>
+                                    <Card title="Card title" bordered={false}>
+                                        Card content
+                                </Card>
+                                </Col>
+                                <Col xs={{ span: 0, offset: 1 }} lg={{ span: 7, offset: 1 }}>
+                                    <Card title="Card title" bordered={false}>
+                                        Card content
+                                </Card>
+                                </Col>
+                            </Row>
+                        </div>
+                    </div>
+                </Card>
+                <Card title="Restaurants">
+                    <RestaurantList />
+                </Card> */}
             </div>
         )
     }

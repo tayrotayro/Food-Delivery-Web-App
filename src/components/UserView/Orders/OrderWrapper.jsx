@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Badge } from 'antd'
+import ActiveOrderCard from './ActiveOrderCard';
 
 class OrderWrapper extends Component {
     constructor(props) {
@@ -10,7 +12,11 @@ class OrderWrapper extends Component {
 
     render() {
         return (
-            <h1>Order</h1>
+            <div>
+                <h1>Active Orders <Badge style={{ backgroundColor: '#2f54eb' }} count={"1 order"} /></h1>
+                <ActiveOrderCard />
+                <h1>Order History <Badge style={{ backgroundColor: '#2f54eb' }} count={"8 orders"} /></h1>
+            </div>
         )
     }
 }

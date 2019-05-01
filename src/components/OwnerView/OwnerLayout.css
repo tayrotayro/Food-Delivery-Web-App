@@ -1,13 +1,21 @@
 .owner-status-bar {
-    height: 25px;
+    height: 24px;
     width: 100vw;
-    background-color: lightskyblue;
+    color: white;
+    background-color: #003a8c;
+    position: fixed;
+    top: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
 
-.owner-status-bar h4 {
-    margin: 0px;
-    color: white;
+.owner-layout-wrapper {
+    background: #fafafa;
+}
+
+.owner-content {
+    padding: calc(8px + 24px) 24px 48px 24px;
+    min-height: 100vh;
 }

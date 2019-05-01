@@ -1,0 +1,74 @@
+.user-profile-wrapper .user-profile-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0px 0px 0px;
+}
+
+.user-profile-wrapper .user-profile-header h1 {
+    margin: 0px 0px;
+}
+
+.user-profile-wrapper .user-profile-header a {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.user-profile-wrapper .user-profile-section {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.user-profile-wrapper .user-profile-section h3 {
+    margin-bottom: 16px;
+}
+
+.user-profile-wrapper .user-profile-info h3 {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.user-profile-wrapper .user-profile-info .ant-form-item {
+    margin-bottom: 8px;
+}
+
+.user-profile-wrapper .user-profile-info .ant-form-item-label>label {
+    font-weight: 500;
+}
+
+.user-profile-wrapper .user-profile-section .hover-right-button {
+    display: inline-block;
+    float: right;
+    color: #1890ff;
+    font-size: 16px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.user-profile-wrapper .user-profile-clickable {
+    font-size: 16px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-profile-wrapper .user-profile-clickable h3 {
+    margin-bottom: 0;
+}
+
+.user-profile-wrapper .user-profile-title-icon {
+    margin-right: 8px;
+}
+
+.user-profile-wrapper .user-profile-clickable-icon:hover {
+    cursor: pointer;
+    color: #1890ff;
+}
+
+.user-profile-wrapper .log-out-button {
+    width: 100%;
+    margin: 8px 0px;
+}
