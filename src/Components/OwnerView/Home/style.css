@@ -1,3 +1,20 @@
+.empty-owner-restaurant-list {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-owner-restaurant-list img {
+    width: 80%;
+    max-width: 300px;
+}
+
+.empty-owner-restaurant-list h3 {
+    margin-bottom: 24px;
+}
+
 .restaurant-cards {
     display: flex;
     flex-direction: column;
@@ -9,8 +26,13 @@
     padding-bottom: 15px;
 }
 
-.owner-home {
-    text-align: center;
+.owner-home {}
+
+.owner-home .headings-with-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .dropdown {

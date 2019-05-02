@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router';
 import { Button, Form, Input, Divider, Select } from 'antd';
-import './style.css';
 
 class DriverProfileWrapper extends Component {
     constructor(props) {

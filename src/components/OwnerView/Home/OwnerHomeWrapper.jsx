@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
-import { Divider, Card, Collapse, Button } from 'antd';
+import { Button, Row, Col, Icon } from 'antd';
 import axios from 'axios';
+import OwnerHomeRestaurantCard from './OwnerHomeRestaurantCard';
+import AddRestaurantDrawer from './Drawers/AddRestaurantDrawer';
 import "./style.css";
-import OwnerProfileCreateRestaurant from '../Profile/OwnerProfileCreateRestaurant';
 
 class OwnerHomeWrapper extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            restaurants: []
+            restaurants: [],
+            openAddRestaurantDrawer: false
         }
     }
 
@@ -18,7 +20,7 @@ class OwnerHomeWrapper extends Component {
 
         axios.get(`http://localhost:5000/api/restaurant/${baseUserId}`)
             .then(response => {
-                console.log(response);
+                console.log(response.data.data);
                 this.setState({
                     restaurants: response.data.data
                 })
@@ -28,84 +30,42 @@ class OwnerHomeWrapper extends Component {
             })
     }
 
-    navigateToCreateRestaurant = () => {
-        this.props.history.push('/owner-create-restaurant')
-    }
-
-    //use card to render info
-
-
     render() {
-        const { Meta } = Card;
-        const Panel = Collapse.Panel;
-
-        if (!this.state.restaurants || this.state.restaurants.length === 0) {
-            return (
-                <div className="empty-owner-restaurant-list">
-
-                </div>
-            )
-        }
+        // if (!this.state.restaurants || this.state.restaurants.length === 0) {
+        //     return (
+        //         <div className="empty-owner-restaurant-list">
+        //             <img src={require('../../../images/empty-state-1.png')} />
+        //             <h3>You have no restaurant in Delivrd system</h3>
+        //             <Button type="primary" size="large" onClick={() => this.setState({ openAddRestaurantDrawer: true })}>Register a new restaurant</Button>
+        //             <AddRestaurantDrawer isOpen={this.state.openAddRestaurantDrawer} onClose={() => this.setState({ openAddRestaurantDrawer: false })} />
+        //         </div>
+        //     )
+        // }
 
         return (
             <div className="owner-home">
-                <h1>Owner Home</h1>
-                <Divider>My Restaurants</Divider>
-                {
-                    this.state.restaurants === null
-                    &&
-                    <div className="no-restaurants">
-                        <h1>YOU HAVE NO RESTAURANTS!</h1>
-                        <Button type="primary"
-                        style={{width: "250px"}}
-                            size="large"
-                            block
-                            onClick={this.navigateToCreateRestaurant}>
-                            Add New Restaurant
-                        </Button>
-                    </div>
-                }
-                {
-                    this.state.restaurants != null
-                    &&
-                    this.state.restaurants.map(restaurant => {
-                        return (
-                            <div className="restaurant-cards">
-                                <Card
-                                    hoverable
-                                    style={{ width: 240, textAlign: "center" }}
-                                    cover={<img alt="example" src={restaurant.pictureURL} />}
-                                >
-                                    <Divider />
-                                    <Meta
-                                        title={restaurant.name}
-                                        description={restaurant.description}
-                                    />
-                                    <div className="dropdown" >
-                                        {/* <Dropdown overlay={menu} trigger={['click']}>
-                                            <a className="ant-dropdown-link" href="#">
-                                               More Info <Icon type="down" />
-                                            </a>
-                                        </Dropdown> */}
-
-                                        <Collapse defaultActiveKey={['0']} style={{ width: "190px", paddingLeft: "10px", textAlign: "left" }} >
-                                            <Panel header="More Info" key="1" style={{ flexDirection: "column" }}>
-                                                <div className="rest-info">
-                                                    <p><strong>Phone:</strong> {restaurant.phone}</p>
-                                                    <p><strong>Address:</strong> {restaurant.address}</p>
-                                                </div>
-                                            </Panel>
-                                        </Collapse>
-                                    </div>
-                                </Card>
-                            </div>
-                        )
-                    })
-                }
+                <div className="headings-with-actions">
+                    <h1>My Restaurants</h1>
+                    <a>
+                        <Icon type="plus-circle" style={{ fontSize: '26px' }}
+                            onClick={() => this.setState({ openAddRestaurantDrawer: true })} />
+                    </a>
+                </div>
+                <Row gutter={{ xs: 0, sm: 0, md: 32, lg: 32, xl: 32 }}>
+                    {
+                        this.state.restaurants.map(restaurant => {
+                            return (
+                                <Col xs={24} sm={24} md={12} lg={12} xl={12} key={restaurant._id}>
+                                    <OwnerHomeRestaurantCard restaurant={restaurant} />
+                                </Col>
+                            )
+                        })
+                    }
+                </Row>
+                <AddRestaurantDrawer isOpen={this.state.openAddRestaurantDrawer} onClose={() => this.setState({ openAddRestaurantDrawer: false })} />
             </div>
         )
     }
-
 }
 
 export default withRouter(OwnerHomeWrapper);

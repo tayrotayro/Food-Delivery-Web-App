@@ -3,7 +3,6 @@ import { Row, Col } from 'antd';
 import '../../../style/Dashboard.css';
 import Spinner from '../../Spinner';
 import UserHomeRestaurantCard from './UserHomeRestaurantCard';
-import RestaurantList from '../../UserView/Home/RestaurantList';
 import axios from 'axios';
 
 class DashboardContent extends Component {
@@ -29,12 +28,6 @@ class DashboardContent extends Component {
                 console.log(err)
             })
     }
-
-    // componentDidMount() {
-    //     setTimeout(() => {
-    //         this.setState({ loading: false })
-    //     }, 1000)
-    // }
 
     render() {
         if (this.state.loading) {
