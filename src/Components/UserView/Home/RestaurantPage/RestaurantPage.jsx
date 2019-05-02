@@ -36,6 +36,7 @@ class RestaurantPage extends Component {
         })
             .then(response => {
                 console.log(response);
+                this.setState({ openCustomizeModal: false, selectedMenuItem: null, itemQuantity: 1, specialInstructions: "" })
             })
             .catch(err => {
                 console.log(err);
