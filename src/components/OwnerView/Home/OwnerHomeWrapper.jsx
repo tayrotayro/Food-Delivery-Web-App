@@ -48,7 +48,7 @@ class OwnerHomeWrapper extends Component {
                     <img src={require('../../../images/empty-state-1.png')} />
                     <h3>You have no restaurant in Delivrd system</h3>
                     <Button type="primary" size="large" onClick={() => this.setState({ openAddRestaurantDrawer: true })}>Register a new restaurant</Button>
-                    <AddRestaurantDrawer isOpen={this.state.openAddRestaurantDrawer} onClose={() => this.setState({ openAddRestaurantDrawer: false })} />
+                    <AddRestaurantDrawer isOpen={this.state.openAddRestaurantDrawer} onClose={() => this.setState({ openAddRestaurantDrawer: false })} refetch={this.fetchRestaurants} />
                 </div>
             )
         }
