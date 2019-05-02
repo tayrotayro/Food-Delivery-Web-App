@@ -111,8 +111,7 @@ class CartWrapper extends Component {
             userId: localStorage.getItem('loggedInUserId')
         })
             .then(response => {
-                console.log(response.data.data);
-
+                localStorage.setItem('userCartId', response.data.data);
             })
             .catch(err => console.log(err))
     }
