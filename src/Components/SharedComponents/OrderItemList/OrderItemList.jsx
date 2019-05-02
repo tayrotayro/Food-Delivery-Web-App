@@ -4,15 +4,28 @@ import EditableOrderItem from './EditableOrderItem';
 import UneditableOrderItem from './UneditableOrderItem';
 import './OrderItemList.css';
 
-// Props List: isEditable
-
 class OrderItemList extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-
-        }
+        this.state = {}
     }
+
+    // componentDidMount() {
+    //     let subtotal = 0;
+
+    //     this.props.editableItems.forEach(item => {
+    //         subtotal = subtotal + item.total;
+    //     })
+
+    //     const tax = parseFloat((subtotal * 7 / 100).toFixed(2));
+    //     const total = parseFloat((subtotal + tax + 4.99).toFixed(2));
+
+    //     this.setState({
+    //         subtotal,
+    //         tax,
+    //         total
+    //     })
+    // }
 
     render() {
         return (
@@ -21,8 +34,11 @@ class OrderItemList extends Component {
                     this.props.isEditable
                     &&
                     <div>
-                        <EditableOrderItem />
-                        <EditableOrderItem />
+                        {
+                            this.props.editableItems.map(item => {
+                                return <EditableOrderItem item={item} />
+                            })
+                        }
                     </div>
                 }
                 {
@@ -36,11 +52,11 @@ class OrderItemList extends Component {
                 <div className={`${this.props.isEditable ? "with-padding" : "no-padding"}`}>
                     <div className="order-breakdown-details">
                         <div className="title">Subtotal</div>
-                        <div className="amount">$37.02</div>
+                        <div className="amount">${this.props.subtotal}</div>
                     </div>
                     <div className="order-breakdown-details">
-                        <div className="title">Tax</div>
-                        <div className="amount">$3.33</div>
+                        <div className="title">Tax (7.00%)</div>
+                        <div className="amount">${this.props.tax}</div>
                     </div>
                     <div className="order-breakdown-details">
                         <div className="title">
@@ -53,7 +69,7 @@ class OrderItemList extends Component {
                     </div>
                     <div className="order-breakdown-total">
                         <div className="title">Total</div>
-                        <div className="amount">$45.34</div>
+                        <div className="amount">${this.props.total}</div>
                     </div>
                 </div>
             </div>

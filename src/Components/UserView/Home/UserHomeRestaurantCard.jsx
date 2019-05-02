@@ -17,21 +17,23 @@ class UserHomeRestaurantCard extends Component {
         else if (number === 3) return '$$$'
         else if (number === 4) return '$$$$'
     }
-    
+
     render() {
         const restaurant = this.props.restaurant;
+
         return (
             <div>
                 <Card
                     className="user-home-restaurant-card"
                     bordered={false}
                     cover={<img alt="example" src={restaurant.pictureURL} />}
+                    onClick={() => this.props.onClick()}
                 >
                     <div className="restaurant-title">{restaurant.name}</div>
                     <div className="restaurant-subtitle">{this.displayPriceRange(restaurant.priceRange)} • {restaurant.description}</div>
                     <span>
                         <Rate disabled allowHalf defaultValue={4.5} />
-                        <span className="ant-rate-text">68</span>
+                        <span className="ant-rate-text">(68)</span>
                     </span>
                 </Card>
             </div>

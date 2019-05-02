@@ -63,8 +63,6 @@ class OwnerProfileCreateRestaurant extends Component {
             });
     }
 
-
-
     navigateToOwnerProfile = () => {
         this.props.history.push('/owner-profile');
     }

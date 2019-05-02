@@ -1,0 +1,64 @@
+.user-restaurant-drawer .ant-drawer-content-wrapper {
+    width: 100vw !important;
+    padding-top: 58px;
+}
+
+.user-restaurant-drawer .ant-drawer-header {
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100vw;
+}
+
+.user-restaurant-drawer .ant-form-item {
+    margin-bottom: 8px;
+}
+
+.restaurant-menu-item-card {
+    border-radius: 8px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+    font-weight: 300;
+}
+
+.restaurant-menu-item-card-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-item-customize-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 24px 0px 0px 0px;
+}
+
+.menu-item-customize-actions h2 {
+    margin-bottom: 0px;
+}
+
+.quantity-update {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.quantity-update .quantity {
+    font-size: 22px;
+    font-weight: 500;
+    min-width: 16px;
+    margin: 0px 8px;
+    text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+    .user-restaurant-drawer .ant-drawer-content-wrapper {
+        width: 100vw !important;
+    }
+}

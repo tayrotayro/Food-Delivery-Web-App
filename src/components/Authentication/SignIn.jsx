@@ -45,6 +45,7 @@ class SignInForm extends Component {
                         const user = response.data.data;
                         const userId = user._id
                         localStorage.setItem("loggedInUserId", userId);
+                        localStorage.setItem("userCartId", user.cartId);
                         this.props.navigateToViewPicker();
                     }
                 })
