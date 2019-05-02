@@ -44,7 +44,7 @@ class PastOrderCard extends Component {
                         <Divider className="dense" />
                         <Row>
                             <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-                                <h3>Delivery by <a>Delaney</a></h3>
+                                <h3>Delivery by <a>Courtney</a></h3>
                                 <Avatar size={64} icon="user" src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/16265793_235972110189167_3250242832004968832_n.jpg?_nc_cat=110&_nc_oc=AQmhTY5MYJEkxn7QyL-C5g-BltAzpCBppqIK-TgzaLJhRD6NN5sY8K33yuTlSjdZsgc&_nc_ht=scontent-atl3-1.xx&oh=c2df6aa2d44608b94658fd9fd2e444b4&oe=5D39CC4A" />
                             </Col>
                             <Col xs={24} sm={24} md={0} lg={0} xl={0}>
