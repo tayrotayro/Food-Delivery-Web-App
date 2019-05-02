@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Avatar, Divider, Button, Icon, Form, Input, message } from 'antd';
+import Spinner from '../../Spinner';
 import SecurityDrawer from './Drawers/SecurityDrawer';
 import AddressDrawer from './Drawers/AddressDrawer';
 import PaymentDrawer from './Drawers/PaymentDrawer';
@@ -11,6 +12,10 @@ class ProfileWrapper extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            loadingInfo: true,
+            loadingRoles: true,
+            isDriver: false,
+            isOwner: false,
             isEditingPersonalInfo: false,
             fullName: "",
             email: "",
@@ -23,6 +28,44 @@ class ProfileWrapper extends Component {
             openPaymentDrawer: false,
             userInfo: []
         }
+    }
+
+    componentDidMount() {
+        this.getUserInfo();
+        this.getUserRoles();
+    }
+
+    getUserInfo = () => {
+        const userId = localStorage.getItem('loggedInUserId');
+        Axios.get(`http://localhost:5000/api/user/${userId}`)
+            .then(response => {
+                console.log(response.data.data);
+                this.setState({
+                    loadingInfo: false,
+                    fullName: response.data.data.name,
+                    email: response.data.data.email,
+                    phone: response.data.data.phone
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    getUserRoles = () => {
+        Axios.get(`http://localhost:5000/api/user-roles/${localStorage.getItem('loggedInUserId')}`)
+            .then(response => {
+                const availableRoles = response.data.data;
+                const isDriver = availableRoles.indexOf(2) > -1;
+                const isOwner = availableRoles.indexOf(3) > -1;
+
+                this.setState({
+                    loadingRoles: false,
+                    isDriver,
+                    isOwner
+                })
+            })
+            .catch(err => console.log(err))
     }
 
     handleBecomeOwner = () => {
@@ -52,29 +95,13 @@ class ProfileWrapper extends Component {
                 console.log(err)
             })
     }
-    componentDidMount() {
-            const userId = localStorage.getItem('loggedInUserId');
-            Axios.get(`http://localhost:5000/api/user/${userId}`)
-                .then(response => {
-                    console.log(response.data.data);
-                    this.setState({
-                        fullName: response.data.data.name,
-                        email: response.data.data.email,
-                        phone: response.data.data.phone
-                    })
-                })
-                .catch(err => {
-                    console.log(err)
-                })
-        
-    }
 
     handleUpdateInfo = () => {
         const userId = localStorage.getItem('loggedInUserId');
-        Axios.put(`http://localhost:5000/api/user/${userId}`,{
-                name: this.state.fullName,
-                email: this.state.email,
-                phone: this.state.phone
+        Axios.put(`http://localhost:5000/api/user/${userId}`, {
+            name: this.state.fullName,
+            email: this.state.email,
+            phone: this.state.phone
         })
             .then(response => {
                 console.log(response);
@@ -105,11 +132,15 @@ class ProfileWrapper extends Component {
     }
 
     render() {
+        if (this.state.loadingInfo || this.state.loadingRoles) {
+            return <Spinner />
+        }
+
         return (
             <div className="user-profile-wrapper">
                 <div className="user-profile-header">
                     <div>
-                        <h1>Hi Tam</h1>
+                        <h1>Hi {this.state.fullName}</h1>
                         <a>Update profile image</a>
                     </div>
                     <Avatar size={80} src={"https://pbs.twimg.com/profile_images/1062846911365832705/vEcBrrYv_400x400.jpg"}></Avatar>
@@ -169,7 +200,7 @@ class ProfileWrapper extends Component {
                                     help={this.state.phoneError === "" ? null : this.state.phoneError}
                                 >
                                     <Input
-                                        size="large" 
+                                        size="large"
                                         value={this.state.phone}
                                         onChange={(target) => {
                                             // this.clearErrors();
@@ -188,9 +219,9 @@ class ProfileWrapper extends Component {
                             </Form>
                             :
                             <div>
-                                <div>Tam Nguyen</div>
-                                <div>tam.nguyen9779@gmail.com</div>
-                                <div>(662) 371 - 5507</div>
+                                <div>{this.state.fullName}</div>
+                                <div>{this.state.email}</div>
+                                <div>{this.state.phone}</div>
                             </div>
                     }
                 </div>
@@ -212,9 +243,24 @@ class ProfileWrapper extends Component {
                 <Divider />
                 <div className="user-profile-section">
                     <h3><Icon className="user-profile-title-icon" type="usergroup-add" /> Partnership</h3>
-                    <a>Become a driver partner</a>
-                    <br />
-                    <a onClick={this.handleBecomeOwner}>Become a restaurant partner</a>
+                    {
+                        !this.state.isDriver
+                        &&
+                        <div>
+                            <a onClick={this.handleBecomeDriver}>Become a driver partner</a>
+                            <br />
+                        </div>
+                    }
+                    {
+                        !this.state.isOwner
+                        &&
+                        <a onClick={this.handleBecomeOwner}>Become a restaurant partner</a>
+                    }
+                    {
+                        (this.state.isDriver && this.state.isOwner)
+                        &&
+                        <div>You are currently a driver & a restaurant partner.</div>
+                    }
                 </div>
                 <Divider />
                 <div className="user-profile-section">
@@ -225,7 +271,7 @@ class ProfileWrapper extends Component {
                 </div>
                 <Divider />
                 <Button
-                    disabled
+                    disabled={this.state.isDriver || this.state.isOwner ? false : true}
                     className="log-out-button"
                     size="large"
                     type="primary"
