@@ -49,37 +49,13 @@ class DashboardContent extends Component {
                         [1, 2, 3].map(number => {
                             return (
                                 <Col xs={24} sm={12} md={8} lg={8} xl={8}>
-                                    <UserHomeRestaurantCard />
+                                    <UserHomeRestaurantCard restaurant={this.state.restaurants}/>
                                 </Col>
                             )
                         })
                     }
                 </Row>
-                <h1>Open Now</h1>
-                {/* <Card title="Featured Restaurants" >
-                    <div style={{ background: '#ECECEC', padding: '30px' }}>
-                        <div className="content-cards">
-                            <Row gutter={10}>
-                                <Col xs={{ span: 11, offset: 1 }} lg={{ span: 7, offset: 1 }}>
-                                    <FeaturedRestaurantCard />
-                                </Col>
-                                <Col xs={{ span: 11, offset: 1 }} lg={{ span: 7, offset: 1 }}>
-                                    <Card title="Card title" bordered={false}>
-                                        Card content
-                                </Card>
-                                </Col>
-                                <Col xs={{ span: 0, offset: 1 }} lg={{ span: 7, offset: 1 }}>
-                                    <Card title="Card title" bordered={false}>
-                                        Card content
-                                </Card>
-                                </Col>
-                            </Row>
-                        </div>
-                    </div>
-                </Card>
-                <Card title="Restaurants">
-                    <RestaurantList />
-                </Card> */}
+                {/* <h1>Open Now</h1> */}
             </div>
         )
     }
