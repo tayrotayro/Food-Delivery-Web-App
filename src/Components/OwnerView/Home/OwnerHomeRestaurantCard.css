@@ -1,0 +1,23 @@
+.owner-home-restaurant-card {
+    border-radius: 16px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+.owner-home-restaurant-card .ant-card-head {
+    font-size: 22px;
+}
+
+.owner-home-restaurant-card .ant-card-body {
+    padding: 0px;
+}
+
+.onwner-home-restaurant-card-info {
+    padding: 24px;
+}
+
+.owner-home-restaurant-card-action {
+    padding: 8px 24px;
+    text-align: center;
+    border-top: 1px solid #e8e8e8;
+}
