@@ -48,7 +48,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.85;
+    filter: brightness(0.7);
     transition: 0.5s;
 }
 
@@ -57,7 +57,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.99;
+    filter: brightness(0.97);
 }
 
 .driver-background {
@@ -75,7 +75,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.85;
+    filter: brightness(0.7);
     transition: 0.5s;
 }
 
@@ -84,7 +84,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.99;
+    filter: brightness(0.97);
 }
 
 .owner-background {
@@ -102,7 +102,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.85;
+    filter: brightness(0.7);
     transition: 0.5s;
 }
 
@@ -111,7 +111,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.99;
+    filter: brightness(0.97);
 }
 
 @media screen and (max-width: 991px) {

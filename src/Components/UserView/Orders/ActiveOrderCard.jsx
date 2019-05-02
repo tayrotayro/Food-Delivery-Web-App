@@ -51,7 +51,7 @@ class ActiveOrderCard extends Component {
                         status="process"
                         description={moment().add(10, 'm').format('hh:mm A')} />
                     <Step
-                        title="Enroute"
+                        title={<div><Icon type="loading" /> Enroute</div>}
                         icon={<Icon type="car" />}
                         status="wait"
                         description={moment().add(15, 'm').format('hh:mm A')} />
