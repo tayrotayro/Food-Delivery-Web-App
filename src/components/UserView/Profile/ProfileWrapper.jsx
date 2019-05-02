@@ -212,7 +212,7 @@ class ProfileWrapper extends Component {
                 <Divider />
                 <div className="user-profile-section">
                     <h3><Icon className="user-profile-title-icon" type="usergroup-add" /> Partnership</h3>
-                    <a>Become a driver partner</a>
+                    <a onClick={this.handleBecomeDriver}>Become a driver partner</a>
                     <br />
                     <a onClick={this.handleBecomeOwner}>Become a restaurant partner</a>
                 </div>
