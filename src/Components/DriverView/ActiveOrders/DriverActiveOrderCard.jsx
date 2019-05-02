@@ -3,6 +3,7 @@ import { Card, Tag, Steps, Icon, Collapse, Divider, Avatar, Row, Col, Button } f
 import moment from 'moment';
 import OrderItemList from '../../SharedComponents/OrderItemList/OrderItemList';
 import './DriverActiveOrderCard.css';
+import Axios from 'axios';
 
 const Step = Steps.Step;
 const Panel = Collapse.Panel;
@@ -17,7 +18,15 @@ class DriverActiveOrderCard extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener('resize', () => this.setState({ verticalSteps: window.innerWidth < smallBreakPoint }))
+        {window.addEventListener('resize', () => this.setState({ verticalSteps: window.innerWidth < smallBreakPoint }))}
+        this.fetchAvailableOrders()
+    }
+
+    fetchAvailableOrders = () => {
+        Axios.get(`http://localhost:5000/api/driver/available-orders`)
+            .then(response => {
+                console.log(response);
+            })
     }
 
     componentWillUnmount() {

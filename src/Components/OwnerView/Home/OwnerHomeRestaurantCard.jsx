@@ -63,6 +63,8 @@ class OwnerHomeRestaurantCard extends Component {
                     onClose={() => this.setState({ openHoursDrawer: false })} />
                 <MenuDrawer
                     menuId={restaurant.menuId}
+                    restaurant={restaurant}
+                    refetch={this.props.refetch}
                     isOpen={this.state.openMenuDrawer}
                     onClose={() => this.setState({ openMenuDrawer: false })}
                 />

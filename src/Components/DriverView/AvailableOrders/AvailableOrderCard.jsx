@@ -9,10 +9,11 @@ class AvailableOrderCard extends Component {
     }
 
     render() {
+        const order = this.props.orders;
         return (
             <Card
                 className="available-order-card"
-                title="Customer Name"
+                title={order.name}
                 extra={<Button type="primary">Select Order</Button>}
             >
                 <h3>Deliver From</h3>
