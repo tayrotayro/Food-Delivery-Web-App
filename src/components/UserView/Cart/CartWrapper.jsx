@@ -101,6 +101,18 @@ class CartWrapper extends Component {
             .then(response => {
                 console.log(response);
                 this.next();
+                this.resetCart();
+            })
+            .catch(err => console.log(err))
+    }
+
+    resetCart = () => {
+        axios.post(`http://localhost:5000/api/cart/reset`, {
+            userId: localStorage.getItem('loggedInUserId')
+        })
+            .then(response => {
+                console.log(response.data.data);
+
             })
             .catch(err => console.log(err))
     }

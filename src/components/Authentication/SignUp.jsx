@@ -40,7 +40,7 @@ class SignUpForm extends Component {
                 if (user) {
                     const userId = user._id;
                     localStorage.setItem("loggedInUserId", userId);
-                    this.props.navigateToDashboard();
+                    this.props.navigateToViewPicker();
                 } else {
                     this.setState({ emailErrorMessage: result.data.message })
                 }
@@ -51,7 +51,7 @@ class SignUpForm extends Component {
     }
 
     render() {
-        const { getFieldDecorator } = this.props.form;
+        // const { getFieldDecorator } = this.props.form;
         const { name, phone, email, password } = this.state;
 
         return (
@@ -59,73 +59,73 @@ class SignUpForm extends Component {
                 <h1>Sign Up</h1>
                 <Form>
                     <Form.Item>
-                        {getFieldDecorator('name', {
+                        {/* {getFieldDecorator('name', {
                             rules: [{
                                 required: true, message: 'Please input your full name!',
                             }],
-                        })(
-                            <Input
-                                autoFocus
-                                size="large"
-                                placeholder="Full Name"
-                                required
-                                value={name}
-                                onChange={(result) => {
-                                    this.setState({ name: result.target.value })
-                                }} />
-                        )}
+                        })( */}
+                        <Input
+                            autoFocus
+                            size="large"
+                            placeholder="Full Name"
+                            required
+                            value={name}
+                            onChange={(result) => {
+                                this.setState({ name: result.target.value })
+                            }} />
+                        {/* )} */}
                     </Form.Item>
                     <Form.Item>
-                        {getFieldDecorator('phone', {
+                        {/* {getFieldDecorator('phone', {
                             rules: [{
                                 required: true, message: 'Please input your phone number!',
                             }],
-                        })(
-                            <Input
-                                size="large"
-                                placeholder="Phone Number"
-                                required
-                                value={phone}
-                                onChange={(result) => {
-                                    this.setState({ phone: result.target.value })
-                                }} />
-                        )}
+                        })( */}
+                        <Input
+                            size="large"
+                            placeholder="Phone Number"
+                            required
+                            value={phone}
+                            onChange={(result) => {
+                                this.setState({ phone: result.target.value })
+                            }} />
+                        {/* )} */}
                     </Form.Item>
                     <Form.Item>
-                        {getFieldDecorator('email', {
+                        {/* {getFieldDecorator('email', {
                             rules: [{
                                 type: 'email', message: 'Please input a valid email!',
                             }, {
                                 required: true, message: 'Please input your email!',
                             }],
-                        })(
-                            <Input
-                                size="large"
-                                placeholder="Email"
-                                required
-                                value={email}
-                                error={this.state.error}
-                                onChange={(result) => {
-                                    this.setState({ email: result.target.value })
-                                }} />
-                        )}
+                        })( */}
+                        <Input
+                            size="large"
+                            placeholder="Email"
+                            required
+                            value={email}
+                            error={this.state.error}
+                            onChange={(result) => {
+                                this.setState({ email: result.target.value })
+                            }} />
+                        {/* )} */}
                     </Form.Item>
                     <Form.Item>
-                        {getFieldDecorator('password', {
+                        {/* {getFieldDecorator('password', {
                             rules: [{
                                 required: true, message: 'Please input your password!',
                             }],
-                        })(
-                            <Input
-                                size="large"
-                                placeholder="Password"
-                                type="password"
-                                required
-                                value={password}
-                                onChange={(result) => {
-                                    this.setState({ password: result.target.value })
-                                }} />
-                        )}
+                        })( */}
+                        <Input
+                            size="large"
+                            placeholder="Password"
+                            type="password"
+                            required
+                            value={password}
+                            onChange={(result) => {
+                                this.setState({ password: result.target.value })
+                            }} />
+                        {/* )} */}
                     </Form.Item>
                     <div className="sign-up-button">
                         <Button type="primary" onClick={this.sendSignUpRequest}>Sign Up</Button>
@@ -136,6 +136,6 @@ class SignUpForm extends Component {
     }
 }
 
-const WrappedSignUpForm = Form.create({ name: 'signup-form' })(SignUpForm);
+// const WrappedSignUpForm = Form.create({ name: 'signup-form' })(SignUpForm);
 
-export default WrappedSignUpForm;
+export default SignUpForm;
