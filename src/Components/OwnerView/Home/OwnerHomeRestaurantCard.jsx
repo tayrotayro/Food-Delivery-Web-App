@@ -52,7 +52,11 @@ class OwnerHomeRestaurantCard extends Component {
                         </Row>
                     </div>
                 </Card>
-                <InfoDrawer isOpen={this.state.openInfoDrawer} onClose={() => this.setState({ openInfoDrawer: false })} />
+                <InfoDrawer
+                    restaurant={restaurant}
+                    isOpen={this.state.openInfoDrawer}
+                    onClose={() => this.setState({ openInfoDrawer: false })}
+                    refetch={this.props.refetch} />
                 <HoursDrawer
                     hours={restaurant.hours}
                     isOpen={this.state.openHoursDrawer}

@@ -11,20 +11,30 @@ class UserHomeRestaurantCard extends Component {
         }
     }
 
+    displayPriceRange = (number) => {
+        if (number === 1) return '$'
+        else if (number === 2) return '$$'
+        else if (number === 3) return '$$$'
+        else if (number === 4) return '$$$$'
+    }
+    
     render() {
+        const restaurant = this.props.restaurant;
         return (
-            <Card
-                className="user-home-restaurant-card"
-                bordered={false}
-                cover={<img alt="example" src="https://samuivillaretreat.com/blog/wp-content/uploads/2017/03/Amazing-Local-Dishes-to-try-in-Koh-Samui.jpg" />}
-            >
-                <div className="restaurant-title">Pick Thai (1001 Jackson Avenue)</div>
-                <div className="restaurant-subtitle">$ • Asian • Noodles</div>
-                <span>
-                    <Rate disabled allowHalf defaultValue={4.5} />
-                    <span className="ant-rate-text">68</span>
-                </span>
-            </Card>
+            <div>
+                <Card
+                    className="user-home-restaurant-card"
+                    bordered={false}
+                    cover={<img alt="example" src={restaurant.pictureURL} />}
+                >
+                    <div className="restaurant-title">{restaurant.name}</div>
+                    <div className="restaurant-subtitle">{this.displayPriceRange(restaurant.priceRange)} • {restaurant.description}</div>
+                    <span>
+                        <Rate disabled allowHalf defaultValue={4.5} />
+                        <span className="ant-rate-text">68</span>
+                    </span>
+                </Card>
+            </div>
         )
     }
 }

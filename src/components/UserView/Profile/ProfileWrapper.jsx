@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Avatar, Divider, Button, Icon, Form, Input } from 'antd';
+import { Avatar, Divider, Button, Icon, Form, Input, message } from 'antd';
 import SecurityDrawer from './Drawers/SecurityDrawer';
 import AddressDrawer from './Drawers/AddressDrawer';
 import PaymentDrawer from './Drawers/PaymentDrawer';
 import './ProfileWrapper.css';
+import Axios from 'axios';
 
 class ProfileWrapper extends Component {
     constructor(props) {
@@ -19,9 +20,72 @@ class ProfileWrapper extends Component {
             phoneError: "",
             openSecurityDrawer: false,
             openAddressDrawer: false,
-            openPaymentDrawer: false
+            openPaymentDrawer: false,
+            userInfo: []
         }
     }
+
+    handleBecomeOwner = () => {
+        const userId = localStorage.getItem('loggedInUserId');
+        console.log(userId);
+        Axios.post(`http://localhost:5000/api/owner/${userId}`)
+            .then(response => {
+                console.log(response);
+                this.props.history.push('/owner-home');
+                message.success("You are now a Restaurant Owner! Welcome!");
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    handleBecomeDriver = () => {
+        const userId = localStorage.getItem('loggedInUserId');
+        console.log(userId);
+        Axios.post(`http://localhost:5000/api/driver/${userId}`)
+            .then(response => {
+                console.log(response);
+                this.props.history.push('/driver-home');
+                message.success("You are now a Driver! Welcome!");
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+    componentDidMount() {
+            const userId = localStorage.getItem('loggedInUserId');
+            Axios.get(`http://localhost:5000/api/user/${userId}`)
+                .then(response => {
+                    console.log(response.data.data);
+                    this.setState({
+                        fullName: response.data.data.name,
+                        email: response.data.data.email,
+                        phone: response.data.data.phone
+                    })
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        
+    }
+
+    handleUpdateInfo = () => {
+        const userId = localStorage.getItem('loggedInUserId');
+        Axios.put(`http://localhost:5000/api/user/${userId}`,{
+                name: this.state.fullName,
+                email: this.state.email,
+                phone: this.state.phone
+        })
+            .then(response => {
+                console.log(response);
+                message.success("Profile Information Updated!");
+
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
 
     closeSecurityDrawer = () => {
         this.setState({ openSecurityDrawer: false })
@@ -91,7 +155,7 @@ class ProfileWrapper extends Component {
                                     help={this.state.emailError === "" ? null : this.state.emailError}
                                 >
                                     <Input
-                                        size="large" type="password"
+                                        size="large" type="email"
                                         value={this.state.email}
                                         onChange={(target) => {
                                             // this.clearErrors();
@@ -105,7 +169,7 @@ class ProfileWrapper extends Component {
                                     help={this.state.phoneError === "" ? null : this.state.phoneError}
                                 >
                                     <Input
-                                        size="large" type="password"
+                                        size="large" 
                                         value={this.state.phone}
                                         onChange={(target) => {
                                             // this.clearErrors();
@@ -119,7 +183,7 @@ class ProfileWrapper extends Component {
                                         textAlign: 'right'
                                     }}
                                 >
-                                    <Button size="large" onClick={this.onSubmit} type="primary" htmlType="submit">Save</Button>
+                                    <Button size="large" onClick={this.handleUpdateInfo} type="primary" htmlType="submit">Save</Button>
                                 </div>
                             </Form>
                             :
@@ -150,7 +214,7 @@ class ProfileWrapper extends Component {
                     <h3><Icon className="user-profile-title-icon" type="usergroup-add" /> Partnership</h3>
                     <a>Become a driver partner</a>
                     <br />
-                    <a>Become a restaurant partner</a>
+                    <a onClick={this.handleBecomeOwner}>Become a restaurant partner</a>
                 </div>
                 <Divider />
                 <div className="user-profile-section">
