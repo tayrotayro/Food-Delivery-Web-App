@@ -1,0 +1,36 @@
+.restaurant-menu-drawer .ant-drawer-content-wrapper {
+    width: 100vw !important;
+    padding-top: 58px;
+}
+
+.restaurant-menu-drawer .ant-drawer-header {
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100vw;
+}
+
+.restaurant-menu-drawer .menu-item {
+    border-radius: 16px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+.restaurant-menu-drawer .menu-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.restaurant-menu-drawer .ant-card-head {
+    font-size: 22px;
+}
+
+@media screen and (max-width: 767px) {
+    .restaurant-menu-drawer .ant-drawer-content-wrapper {
+        width: 100vw !important;
+    }
+}

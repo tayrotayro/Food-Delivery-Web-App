@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import { Card, Row, Col, Icon } from 'antd';
 import InfoDrawer from './Drawers/InfoDrawer';
 import HoursDrawer from './Drawers/HoursDrawer';
+import MenuDrawer from './Drawers/MenuDrawer';
 import './OwnerHomeRestaurantCard.css';
 
 class OwnerHomeRestaurantCard extends Component {
@@ -11,7 +12,7 @@ class OwnerHomeRestaurantCard extends Component {
         this.state = {
             openInfoDrawer: false,
             openHoursDrawer: false,
-            openMenuDrawer: false
+            openMenuDrawer: true
         }
     }
 
@@ -56,6 +57,11 @@ class OwnerHomeRestaurantCard extends Component {
                     hours={restaurant.hours}
                     isOpen={this.state.openHoursDrawer}
                     onClose={() => this.setState({ openHoursDrawer: false })} />
+                <MenuDrawer
+                    menuId={restaurant.menuId}
+                    isOpen={this.state.openMenuDrawer}
+                    onClose={() => this.setState({ openMenuDrawer: false })}
+                />
             </div>
         )
     }
