@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Badge } from 'antd';
 import DriverActiveOrderCard from './DriverActiveOrderCard';
 
 class DriverActiveOrderWrapper extends Component {
@@ -11,9 +12,8 @@ class DriverActiveOrderWrapper extends Component {
 
     render() {
         return (
-             <div>
-                <h1 style = {{textAlign: 'center'}}>Driver Active Orders</h1>
-           
+            <div>
+                <h1>Active Orders <Badge style={{ backgroundColor: '#237804' }} count={"3"} /></h1>
                 <DriverActiveOrderCard />
             </div>
         )

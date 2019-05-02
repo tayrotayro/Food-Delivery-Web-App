@@ -1,0 +1,13 @@
+.available-order-card {
+    border-radius: 16px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+.available-order-card .ant-card-head {
+    font-size: 22px;
+}
+
+.available-order-card .ant-card-body {
+    font-weight: 300;
+}

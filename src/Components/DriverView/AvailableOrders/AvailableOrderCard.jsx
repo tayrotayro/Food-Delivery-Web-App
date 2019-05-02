@@ -1,46 +1,35 @@
 import React, { Component } from 'react';
-import { Button, Card } from 'antd';
+import { Card, Button, Divider } from 'antd';
+import './AvailableOrderCard.css';
 
-
-const buttonStyle={
-size:"small",
-flexDirection: 'row',
-AlignItems: 'right',
-
-}
-
-const content = 'this is where all your order information goes.';
-const Price = '$$';
-const Status = 'Available for Pickup'
-
-
-class DriverAvailableOrderCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
+class AvailableOrderCard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
     }
-  }
 
-
-  render() {
-
-    return (
-
-      <Card size ='small' title = 'Payton Karno' extra ={<Button style={buttonStyle} type = 'primary'>Accept Order</Button>}>
-      
-      <div style={{direction: 'flex', flexDirection: 'row'}}>
-      <h3>Contents:</h3><p>{content}</p>
-      </div>
-
-      <h3>Status: </h3><p>{Status}</p>
-      
-      <h3>Price: </h3><p>{Price}</p>
-    </Card>  
-
-        
-    )
-  }
+    render() {
+        return (
+            <Card
+                className="available-order-card"
+                title="Customer Name"
+                extra={<Button type="primary">Select Order</Button>}
+            >
+                <h3>Deliver From</h3>
+                <div>Restaurant name</div>
+                <div>Restaurant address</div>
+                <Divider />
+                <h3>Deliver To</h3>
+                <div>Taylor Rotolo</div>
+                <div>1000 Jackson Ave West</div>
+                <div>Apt. 123</div>
+                <div>Oxford, MS 38655</div>
+                <Divider />
+                <h3 style={{ display: 'inline-block' }}>Total:&nbsp;&nbsp;</h3>
+                <h2 style={{ display: 'inline-block' }}>$18.32</h2>
+            </Card>
+        )
+    }
 }
 
-export default DriverAvailableOrderCard;
+export default AvailableOrderCard;
