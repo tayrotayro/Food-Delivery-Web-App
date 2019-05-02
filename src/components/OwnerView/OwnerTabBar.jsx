@@ -58,9 +58,8 @@ class OwnerTabBar extends Component {
                         }}
                         data-seed="logId"
                     >
-                        {/* {this.renderContent('Life')} */}
                     </TabBar.Item>
-                    <TabBar.Item
+                    {/* <TabBar.Item
                         icon={
                             <Icon type="file-markdown" />
                         }
@@ -68,7 +67,7 @@ class OwnerTabBar extends Component {
                             <Icon type="file-markdown" />
                         }
                         title="Menu"
-                        key="Search"
+                        key="Menu"
                         selected={this.state.selectedTab === 'ownerMenuTab'}
                         onPress={() => {
                             this.setState({
@@ -78,8 +77,7 @@ class OwnerTabBar extends Component {
                         }}
                         data-seed="logId1"
                     >
-                        {/* {this.renderContent('Koubei')} */}
-                    </TabBar.Item>
+                    </TabBar.Item> */}
                     <TabBar.Item
                         icon={
                             <Icon type="inbox" />
@@ -88,7 +86,7 @@ class OwnerTabBar extends Component {
                             <Icon type="inbox" />
                         }
                         title="Active Orders"
-                        key="Orders"
+                        key="Active"
                         selected={this.state.selectedTab === 'ownerActiveTab'}
                         onPress={() => {
                             this.setState({
@@ -97,7 +95,6 @@ class OwnerTabBar extends Component {
                             this.props.history.push("/owner-active");
                         }}
                     >
-                        {/* {this.renderContent('Friend')} */}
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
@@ -107,7 +104,7 @@ class OwnerTabBar extends Component {
                             <Icon type="schedule" />
                         }
                         title="Past Orders"
-                        key="Cart"
+                        key="Past"
                         selected={this.state.selectedTab === 'ownerPastTab'}
                         onPress={() => {
                             this.setState({
@@ -117,7 +114,6 @@ class OwnerTabBar extends Component {
                         }}
                         data-seed="logId1"
                     >
-                        {/* {this.renderContent('Koubei')} */}
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
@@ -137,7 +133,6 @@ class OwnerTabBar extends Component {
                         }}
                         data-seed="logId1"
                     >
-                        {/* {this.renderContent('Koubei')} */}
                     </TabBar.Item>
                 </TabBar>
             </div>
