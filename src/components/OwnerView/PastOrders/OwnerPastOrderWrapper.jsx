@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Card} from 'antd';
-import OwnerPastOrderCard from '../PastOrders/OwnerPastOrderCard';
+import { Card, Badge } from 'antd';
+import OwnerPastOrderCard from './OwnerPastOrderCard';
 
 class OwnerPastOrderWrapper extends Component {
     constructor(props) {
@@ -12,9 +12,10 @@ class OwnerPastOrderWrapper extends Component {
 
     render() {
         return (
-            <Card title = "Past Orders">
-                <OwnerPastOrderCard/>
-            </Card>
+            <div>
+                <h1>Order History <Badge style={{ backgroundColor: '#003a8c' }} count={"19 orders"} /></h1>
+                <OwnerPastOrderCard />
+            </div>
         )
     }
 }

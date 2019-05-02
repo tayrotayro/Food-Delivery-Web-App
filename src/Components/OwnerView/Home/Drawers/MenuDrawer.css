@@ -29,6 +29,16 @@
     font-size: 22px;
 }
 
+.restaurant-menu-drawer .delete-menu-item-button {
+    color: #f5222d;
+    font-size: 18px;
+}
+
+.restaurant-menu-drawer .delete-menu-item-button:hover {
+    cursor: pointer;
+    color: #ff7875;
+}
+
 @media screen and (max-width: 767px) {
     .restaurant-menu-drawer .ant-drawer-content-wrapper {
         width: 100vw !important;

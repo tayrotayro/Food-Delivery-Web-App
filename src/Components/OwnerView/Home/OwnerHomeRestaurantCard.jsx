@@ -12,7 +12,7 @@ class OwnerHomeRestaurantCard extends Component {
         this.state = {
             openInfoDrawer: false,
             openHoursDrawer: false,
-            openMenuDrawer: true
+            openMenuDrawer: false
         }
     }
 

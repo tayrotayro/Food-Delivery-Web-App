@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Drawer, PageHeader, Card, Row, Col, Modal, Form, Input, Button } from 'antd';
+import { Drawer, PageHeader, Card, Row, Col, Modal, Form, Input, Button, Icon } from 'antd';
 import './MenuDrawer.css';
 
 class MenuDrawer extends Component {
@@ -57,6 +57,9 @@ class MenuDrawer extends Component {
                                     >
                                         <p>Food description</p>
                                         <h2>$10.95</h2>
+                                        <span className="delete-menu-item-button">
+                                            <Icon type="delete" />
+                                        </span>
                                     </Card>
                                 </Col>
                             )

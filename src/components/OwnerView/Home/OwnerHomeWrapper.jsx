@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { Button, Row, Col, Icon } from 'antd';
 import axios from 'axios';
+import Spinner from '../../Spinner';
 import OwnerHomeRestaurantCard from './OwnerHomeRestaurantCard';
 import AddRestaurantDrawer from './Drawers/AddRestaurantDrawer';
 import "./style.css";
@@ -10,6 +11,7 @@ class OwnerHomeWrapper extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            loading: true,
             restaurants: [],
             openAddRestaurantDrawer: false
         }
@@ -22,6 +24,7 @@ class OwnerHomeWrapper extends Component {
             .then(response => {
                 console.log(response.data.data);
                 this.setState({
+                    loading: false,
                     restaurants: response.data.data
                 })
             })
@@ -31,16 +34,20 @@ class OwnerHomeWrapper extends Component {
     }
 
     render() {
-        // if (!this.state.restaurants || this.state.restaurants.length === 0) {
-        //     return (
-        //         <div className="empty-owner-restaurant-list">
-        //             <img src={require('../../../images/empty-state-1.png')} />
-        //             <h3>You have no restaurant in Delivrd system</h3>
-        //             <Button type="primary" size="large" onClick={() => this.setState({ openAddRestaurantDrawer: true })}>Register a new restaurant</Button>
-        //             <AddRestaurantDrawer isOpen={this.state.openAddRestaurantDrawer} onClose={() => this.setState({ openAddRestaurantDrawer: false })} />
-        //         </div>
-        //     )
-        // }
+        if (this.state.loading) {
+            return <Spinner />
+        }
+
+        if (!this.state.restaurants || this.state.restaurants.length === 0) {
+            return (
+                <div className="empty-owner-restaurant-list">
+                    <img src={require('../../../images/empty-state-1.png')} />
+                    <h3>You have no restaurant in Delivrd system</h3>
+                    <Button type="primary" size="large" onClick={() => this.setState({ openAddRestaurantDrawer: true })}>Register a new restaurant</Button>
+                    <AddRestaurantDrawer isOpen={this.state.openAddRestaurantDrawer} onClose={() => this.setState({ openAddRestaurantDrawer: false })} />
+                </div>
+            )
+        }
 
         return (
             <div className="owner-home">

@@ -21,7 +21,6 @@ class OwnerProfileWrapper extends Component {
 
     render() {
         return (
-
             <div className="profile-wrapper">
                 <h1>Owner Profile</h1>
                 <div className="profile-change-view"
@@ -34,7 +33,6 @@ class OwnerProfileWrapper extends Component {
                 </div>
 
             </div>
-
         )
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Card } from 'antd';
-import OwnerRestaurantMenuDropdown from '../Menu/OwnerRestaurantMenuDropdown';
-import OwnerActiveOrderCard from '../../OwnerView/ActiveOrders/OwnerActiveOrderCard';
+import { Card, Badge } from 'antd';
+import OwnerActiveOrderCard from './OwnerActiveOrderCard';
+// import OwnerRestaurantMenuDropdown from '../Menu/OwnerRestaurantMenuDropdown';
 
 class OwnerActiveOrderWrapper extends Component {
     constructor(props) {
@@ -13,14 +13,13 @@ class OwnerActiveOrderWrapper extends Component {
 
     render() {
         return (
-            <Card title = "Active Orders">
-                <div style = {{padding: '15px', textAlign: 'center'}}>
-                <OwnerRestaurantMenuDropdown/>
-                </div>
-                
+            <div>
+                <h1>Active Orders <Badge style={{ backgroundColor: '#003a8c' }} count={"1 order"} /></h1>
+                {/* <div style={{ padding: '15px', textAlign: 'center' }}>
+                    <OwnerRestaurantMenuDropdown />
+                </div> */}
                 <OwnerActiveOrderCard />
-            </Card>
-            
+            </div>
         )
     }
 }
