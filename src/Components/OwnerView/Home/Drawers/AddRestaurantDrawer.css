@@ -1,0 +1,23 @@
+.add-restaurant-drawer .ant-drawer-content-wrapper {
+    width: 475px !important;
+    padding-top: 58px;
+}
+
+.add-restaurant-drawer .ant-drawer-header {
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 475px;
+}
+
+@media screen and (max-width: 767px) {
+    .add-restaurant-drawer .ant-drawer-content-wrapper {
+        width: 100vw !important;
+    }
+
+    .add-restaurant-drawer .ant-drawer-header {
+        width: 100vw;
+    }
+}

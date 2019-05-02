@@ -9,7 +9,6 @@ import ActiveOrders from './ActiveOrders/OwnerActiveOrderWrapper';
 import PastOrders from './PastOrders/OwnerPastOrderWrapper';
 import OwnerProfile from "./Profile/OwnerProfileWrapper";
 import AppFooter from '../AppFooter';
-import OwnerProfileCreateRestaurant from './Profile/OwnerProfileCreateRestaurant';
 import "../OwnerView/Profile/style.css";
 
 class OwnerLayout extends Component {
