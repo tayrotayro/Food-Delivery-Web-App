@@ -8,9 +8,15 @@
     cursor: pointer;
 }
 
+.user-home-restaurant-card .ant-card-cover {
+    height: 200px;
+}
+
 .user-home-restaurant-card .ant-card-cover img {
     border-radius: 5px;
     transition: 0.5s;
+    height: 200px;
+    /* width: auto; */
 }
 
 .user-home-restaurant-card .ant-card-cover img:hover {
