@@ -66,7 +66,7 @@ class OwnerTabBar extends Component {
                         }
                         title="Active Orders"
                         key="Orders"
-                        badge={1}
+                        // badge={1}
                         selected={this.state.selectedTab === 'driverActiveTab'}
                         onPress={() => {
                             this.setState({
@@ -99,19 +99,19 @@ class OwnerTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="user" />
+                            <Icon type="logout" />
                         }
                         selectedIcon={
-                            <Icon type="user" />
+                            <Icon type="logout" />
                         }
-                        title="Profile"
+                        title="Exit Driver"
                         key="Profile"
                         selected={this.state.selectedTab === 'driverProfileTab'}
                         onPress={() => {
                             this.setState({
                                 selectedTab: 'driverProfileTab',
                             });
-                            this.props.history.push("/driver-profile");
+                            this.props.history.push("/view-picker");
                         }}
                         data-seed="logId1"
                     >

@@ -117,19 +117,19 @@ class OwnerTabBar extends Component {
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
-                            <Icon type="user" />
+                            <Icon type="logout" />
                         }
                         selectedIcon={
-                            <Icon type="user" />
+                            <Icon type="logout" />
                         }
-                        title="Profile"
+                        title="Exit Owner"
                         key="Profile"
                         selected={this.state.selectedTab === 'ownerProfileTab'}
                         onPress={() => {
                             this.setState({
                                 selectedTab: 'ownerProfileTab',
                             });
-                            this.props.history.push("/owner-profile");
+                            this.props.history.push("/view-picker");
                         }}
                         data-seed="logId1"
                     >
