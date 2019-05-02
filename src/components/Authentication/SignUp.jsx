@@ -40,6 +40,7 @@ class SignUpForm extends Component {
                 if (user) {
                     const userId = user._id;
                     localStorage.setItem("loggedInUserId", userId);
+                    localStorage.setItem("userCartId", user.cartId);
                     this.props.navigateToViewPicker();
                 } else {
                     this.setState({ emailErrorMessage: result.data.message })
