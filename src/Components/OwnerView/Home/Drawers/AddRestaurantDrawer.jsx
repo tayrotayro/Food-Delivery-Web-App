@@ -25,7 +25,7 @@ class AddRestaurantDrawer extends Component {
                 destroyOnClose
                 maskClosable={false}
             >
-                <AddNewRestaurantForm />
+                <AddNewRestaurantForm refetch={this.props.refetch} closeDrawer={this.props.onClose} />
             </Drawer>
         )
     }

@@ -16,9 +16,13 @@ class DashboardContent extends Component {
     }
 
     componentDidMount() {
+        this.fetchRestaurants();
+    }
+
+    fetchRestaurants = () => {
         axios.get('http://localhost:5000/api/restaurant')
             .then(response => {
-                console.log(response);
+                console.log(response.data.data);
                 this.setState({
                     restaurants: response.data.data,
                     loading: false
@@ -33,16 +37,18 @@ class DashboardContent extends Component {
         if (this.state.loading) {
             return <Spinner />
         }
-    
+
+        console.log(this.state.restaurants);
+
         return (
             <div className="dasboard-content-wrapper">
                 <h1>Popular</h1>
                 <Row gutter={{ xs: 0, sm: 16, md: 32, lg: 32, xl: 32 }}>
                     {
-                        [1, 2, 3].map(number => {
+                        this.state.restaurants.map(restaurant => {
                             return (
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8}>
-                                    <UserHomeRestaurantCard restaurant={this.state.restaurants}/>
+                                <Col xs={24} sm={12} md={8} lg={8} xl={8} key={restaurant._id}>
+                                    <UserHomeRestaurantCard restaurant={restaurant} refetch={this.fetchRestaurants} />
                                 </Col>
                             )
                         })

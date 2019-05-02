@@ -55,7 +55,8 @@ class OwnerProfileCreateRestaurant extends Component {
             .then(response => {
                 console.log(response);
                 message.success(response.data.message);
-                this.navigateToCreateMenuItem();
+                this.props.refetch();
+                this.props.closeDrawer();
             })
             .catch(error => {
                 console.log(error);
@@ -68,9 +69,9 @@ class OwnerProfileCreateRestaurant extends Component {
         this.props.history.push('/owner-profile');
     }
 
-    navigateToCreateMenuItem = () => {
-        this.props.history.push('/owner-create-menu-item');
-    }
+    // navigateToCreateMenuItem = () => {
+    //     this.props.history.push('/owner-create-menu-item');
+    // }
 
     convertTimeValue = (time) => {
         const result = moment(time).hour() + (moment(time).minute() / 60);
@@ -417,7 +418,7 @@ class OwnerProfileCreateRestaurant extends Component {
 
                     <div className="create-button-submit">
                         <Button type="primary" size="large" htmlType="submit"
-                            style={{ width: '100%'}}
+                            style={{ width: '100%' }}
                             onClick={this.submit}
                         >Create Restaurant</Button>
                     </div>

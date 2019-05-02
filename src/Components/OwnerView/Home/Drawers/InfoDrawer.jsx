@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Drawer, PageHeader, Form, Input, Select, Button } from 'antd';
+import { Drawer, PageHeader, Form, Input, Select, Button, message } from 'antd';
 import './InfoDrawer.css';
+import Axios from 'axios';
 
 class InfoDrawer extends Component {
     constructor(props) {
@@ -16,8 +17,39 @@ class InfoDrawer extends Component {
         }
     }
 
+
     componentDidMount() {
-        // Fetch restaurant data
+        const restaurant = this.props.restaurant;
+        console.log(restaurant);
+        this.setState({
+            name: restaurant.name,
+            address: restaurant.address,
+            phone: restaurant.phone,
+            description: restaurant.description,
+            priceRange: restaurant.priceRange,
+            pictureUrl: restaurant.pictureURL
+        })
+    }
+
+    handleUpdateRestaurant = () => {
+        const restaurant = this.props.restaurant;
+        const restaurantId = restaurant._id;
+        console.log(restaurantId);
+        Axios.put(`http://localhost:5000/api/restaurant-info/${restaurantId}`, {
+            name: this.state.name,
+            address: this.state.address,
+            phone: this.state.phone,
+            description: this.state.description,
+            pictureURL: this.state.pictureUrl
+        })
+            .then(() => {
+                message.success('Restaurant Information Successfully Updated')
+                this.props.refetch();
+                this.props.onClose();
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     render() {
@@ -27,7 +59,7 @@ class InfoDrawer extends Component {
             <Drawer
                 className="restaurant-info-drawer"
                 title={<PageHeader
-                    title="RICE & SPICE - INFORMATION"
+                    title={`${this.state.name.toUpperCase()} - INFORMATION`}
                     onBack={() => this.props.onClose()}
                 />}
                 placement="right"
@@ -43,6 +75,7 @@ class InfoDrawer extends Component {
                         style={{ margin: '8px 0px' }}>
                         <Input required
                             size="large"
+                            defaultValue={this.state.name}
                             onChange={(result) => {
                                 this.setState({
                                     name: result.target.value
@@ -54,6 +87,7 @@ class InfoDrawer extends Component {
                         colon={false}
                         style={{ margin: '8px 0px' }}>
                         <Input required
+                            defaultValue={this.state.phone}
                             size="large"
                             onChange={(result) => {
                                 this.setState({
@@ -66,6 +100,7 @@ class InfoDrawer extends Component {
                         colon={false}
                         style={{ margin: '8px 0px' }}>
                         <Input required
+                            defaultValue={this.state.address}
                             size="large"
                             onChange={(result) => {
                                 this.setState({
@@ -79,6 +114,7 @@ class InfoDrawer extends Component {
                         style={{ margin: '8px 0px' }}>
                         <Input required
                             size="large"
+                            defaultValue={this.state.description}
                             onChange={(result) => {
                                 this.setState({
                                     description: result.target.value
@@ -90,6 +126,7 @@ class InfoDrawer extends Component {
                         colon={false}
                         style={{ margin: '8px 0px' }}>
                         <Input size="large"
+                            defaultValue={this.state.pictureUrl}
                             onChange={(result) => {
                                 this.setState({
                                     pictureUrl: result.target.value
@@ -107,7 +144,7 @@ class InfoDrawer extends Component {
                             <Option value={4}>$$$$</Option>
                         </Select>
                     </Form.Item>
-                    <Button type="primary" size="large" style={{ width: '100%', margin: '24px 0px' }}>Save</Button>
+                    <Button onClick={this.handleUpdateRestaurant} type="primary" size="large" style={{ width: '100%', margin: '24px 0px' }}>Save</Button>
                 </Form>
             </Drawer>
         )

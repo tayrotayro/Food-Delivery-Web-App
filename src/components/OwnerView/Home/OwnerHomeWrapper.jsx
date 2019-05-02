@@ -16,6 +16,10 @@ class OwnerHomeWrapper extends Component {
     }
 
     componentDidMount() {
+        this.fetchRestaurants();
+    }
+
+    fetchRestaurants = () => {
         const baseUserId = localStorage.getItem('loggedInUserId');
 
         axios.get(`http://localhost:5000/api/restaurant/${baseUserId}`)
@@ -56,13 +60,16 @@ class OwnerHomeWrapper extends Component {
                         this.state.restaurants.map(restaurant => {
                             return (
                                 <Col xs={24} sm={24} md={12} lg={12} xl={12} key={restaurant._id}>
-                                    <OwnerHomeRestaurantCard restaurant={restaurant} />
+                                    <OwnerHomeRestaurantCard restaurant={restaurant} refetch={this.fetchRestaurants} />
                                 </Col>
                             )
                         })
                     }
                 </Row>
-                <AddRestaurantDrawer isOpen={this.state.openAddRestaurantDrawer} onClose={() => this.setState({ openAddRestaurantDrawer: false })} />
+                <AddRestaurantDrawer
+                    isOpen={this.state.openAddRestaurantDrawer}
+                    refetch={this.fetchRestaurants}
+                    onClose={() => this.setState({ openAddRestaurantDrawer: false })} />
             </div>
         )
     }
