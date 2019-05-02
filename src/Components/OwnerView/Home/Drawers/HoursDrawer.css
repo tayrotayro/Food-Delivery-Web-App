@@ -1,0 +1,13 @@
+.restaurant-hours-drawer .ant-drawer-content-wrapper {
+    width: 475px !important;
+}
+
+.restaurant-hours-drawer .ant-drawer-header {
+    padding: 0px;
+}
+
+@media screen and (max-width: 767px) {
+    .restaurant-hours-drawer .ant-drawer-content-wrapper {
+        width: 100vw !important;
+    }
+}
