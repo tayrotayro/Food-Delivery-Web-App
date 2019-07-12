@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Drawer, PageHeader } from 'antd';
-import AddNewRestaurantForm from '../../Profile/AddNewRestaurantForm';
+import AddNewRestaurantForm from './AddNewRestaurantForm';
 import './AddRestaurantDrawer.css';
 
 class AddRestaurantDrawer extends Component {

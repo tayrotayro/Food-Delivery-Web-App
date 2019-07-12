@@ -12,11 +12,26 @@
     width: 475px;
 }
 
+.create-button-submit {
+    padding: 24px 0px;
+}
+
+.create-button-cancel {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.owner-tab-bar {
+    padding-top: 60px;
+}
+
 @media screen and (max-width: 767px) {
     .add-restaurant-drawer .ant-drawer-content-wrapper {
         width: 100vw !important;
     }
-
     .add-restaurant-drawer .ant-drawer-header {
         width: 100vw;
     }
