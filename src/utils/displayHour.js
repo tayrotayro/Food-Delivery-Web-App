@@ -7,10 +7,10 @@ export default function displayHour(number) {
         if (hour > 12) {
             const result = (hour - 12).toString() + ":" + (minute * 60).toString() + " PM"
             return result;
-        } else if (number == 0) {
+        } else if (number === 0) {
             const result = "12:" + (minute * 60).toString() + " AM"
             return result;
-        } else if (number == 12) {
+        } else if (number === 12) {
             const result = "12:" + (minute * 60).toString() + " PßM"
             return result;
         } else {
@@ -21,9 +21,9 @@ export default function displayHour(number) {
         if (number > 12) {
             const result = (number - 12).toString() + ":00 PM";
             return result;
-        } else if (number == 0) {
+        } else if (number === 0) {
             return "12:00 AM"
-        } else if (number == 12) {
+        } else if (number === 12) {
             return "12:00 PM"
         } else {
             const result = number.toString() + ":00 AM";

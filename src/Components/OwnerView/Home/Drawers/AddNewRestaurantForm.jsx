@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Input, Divider, Select, Button, TimePicker, message, Row, Col } from 'antd';
 import { withRouter } from 'react-router';
-import './style.css';
 import FormItem from 'antd/lib/form/FormItem';
 import moment from 'moment';
 import axios from 'axios';
