@@ -24,7 +24,7 @@ class DashboardContent extends Component {
     }
 
     fetchRestaurants = () => {
-        axios.get('http://localhost:5000/api/restaurant')
+        axios.get('http://localhost:5000/api/restaurants')
             .then(response => {
                 this.setState({
                     restaurants: response.data.data,
@@ -44,6 +44,7 @@ class DashboardContent extends Component {
                     selectedRestaurant: restaurant,
                     selectedRestaurantMenuItems: response.data.data.items
                 })
+                console.log(restaurant.hours);
             })
             .catch(err => {
                 console.log(err.message);

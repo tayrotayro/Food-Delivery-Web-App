@@ -13,7 +13,7 @@ class AvailableOrderCard extends Component {
         return (
             <Card
                 className="available-order-card"
-                title={order.name}
+                title="hey"
                 extra={<Button type="primary">Select Order</Button>}
             >
                 <h3>Deliver From</h3>

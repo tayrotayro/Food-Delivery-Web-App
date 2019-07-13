@@ -9,18 +9,22 @@
 }
 
 .user-home-restaurant-card .ant-card-cover {
-    height: 200px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-home-restaurant-card .ant-card-cover:hover {
+    transform: translateY(-5px);
 }
 
 .user-home-restaurant-card .ant-card-cover img {
-    border-radius: 5px;
-    transition: 0.5s;
-    height: 200px;
-    /* width: auto; */
-}
-
-.user-home-restaurant-card .ant-card-cover img:hover {
-    transform: translateY(-5px);
+    height: 100%;
+    width: auto;
 }
 
 .user-home-restaurant-card .ant-card-body {
@@ -30,6 +34,9 @@
 .user-home-restaurant-card .restaurant-title {
     font-size: 16px;
     color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .user-home-restaurant-card .restaurant-subtitle {
