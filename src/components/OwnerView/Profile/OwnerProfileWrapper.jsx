@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
-import { Button, Divider } from 'antd';
-import './style.css';
+import { Button } from 'antd';
 
 class OwnerProfileWrapper extends Component {
     constructor(props) {

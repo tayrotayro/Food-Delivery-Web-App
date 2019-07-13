@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
-import { Drawer, PageHeader, Row, Col, Modal, Input, Button } from 'antd';
+import { Drawer, PageHeader, Row, Col, Modal, Input, Button, Icon } from 'antd';
 import RestaurantMenuItem from './RestaurantMenuItem';
 import axios from 'axios';
+import displayPriceRange from '../../../../utils/displayPriceRange';
+import displayHour from '../../../../utils/displayHour';
 import './RestaurantPage.css';
 
 const { TextArea } = Input;
@@ -45,6 +47,7 @@ class RestaurantPage extends Component {
 
     render() {
         const restaurant = this.props.restaurant;
+
         if (!restaurant) {
             return null;
         }
@@ -62,8 +65,61 @@ class RestaurantPage extends Component {
                 visible={this.props.isOpen}
                 destroyOnClose
             >
+                <div className="user-restaurant-drawer-image"
+                    style={{ backgroundImage: `url(${restaurant.pictureURL})` }}>
+                    <div className="info">
+                        <div className="restaurant-name">{restaurant.name}</div>
+                        <div className="restaurant-details">{displayPriceRange(restaurant.priceRange)} • {restaurant.description}</div>
+                        <div className="restaurant-address">
+                            <Icon type="environment" />
+                            {restaurant.address}
+                        </div>
+                        <div className="restaurant-hours">
+                            <Icon type="clock-circle" />
+                            <div>
+                                <div className="restaurant-hours-row">
+                                    <div className="day-of-week">Monday</div>
+                                    <div className="open-time">{displayHour(restaurant.hours.mon.openTime)}</div>
+                                    <div className="close-time">{displayHour(restaurant.hours.mon.closeTime)}</div>
+                                </div>
+                                <div className="restaurant-hours-row">
+                                    <div className="day-of-week">Tuesday</div>
+                                    <div className="open-time">{displayHour(restaurant.hours.tue.openTime)}</div>
+                                    <div className="close-time">{displayHour(restaurant.hours.tue.closeTime)}</div>
+                                </div>
+                                <div className="restaurant-hours-row">
+                                    <div className="day-of-week">Wednesday</div>
+                                    <div className="open-time">{displayHour(restaurant.hours.wed.openTime)}</div>
+                                    <div className="close-time">{displayHour(restaurant.hours.wed.closeTime)}</div>
+                                </div>
+                                <div className="restaurant-hours-row">
+                                    <div className="day-of-week">Thursday</div>
+                                    <div className="open-time">{displayHour(restaurant.hours.thu.openTime)}</div>
+                                    <div className="close-time">{displayHour(restaurant.hours.thu.closeTime)}</div>
+                                </div>
+                                <div className="restaurant-hours-row">
+                                    <div className="day-of-week">Friday</div>
+                                    <div className="open-time">{displayHour(restaurant.hours.fri.openTime)}</div>
+                                    <div className="close-time">{displayHour(restaurant.hours.fri.closeTime)}</div>
+                                </div>
+                                <div className="restaurant-hours-row">
+                                    <div className="day-of-week">Saturday</div>
+                                    <div className="open-time">{displayHour(restaurant.hours.sat.openTime)}</div>
+                                    <div className="close-time">{displayHour(restaurant.hours.sat.closeTime)}</div>
+                                </div>
+                                <div className="restaurant-hours-row">
+                                    <div className="day-of-week">Sunday</div>
+                                    <div className="open-time">{displayHour(restaurant.hours.sun.openTime)}</div>
+                                    <div className="close-time">{displayHour(restaurant.hours.sun.closeTime)}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <Row
-                    gutter={{ xs: 16, sm: 16, md: 32, lg: 32, xl: 32 }}
+                    className="user-restaurant-drawer-menu-items"
+                    type="flex" justify="start" align="top"
+                    gutter={{ xs: 12, sm: 12, md: 24, lg: 24, xl: 24 }}
                 >
                     {
                         this.props.menuItems.map(menuItem => {

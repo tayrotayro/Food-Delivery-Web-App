@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { Card, Rate } from 'antd';
+import displayPriceRange from '../../../utils/displayPriceRange';
 import './UserHomeRestaurantCard.css';
 
 class UserHomeRestaurantCard extends Component {
@@ -9,13 +10,6 @@ class UserHomeRestaurantCard extends Component {
         this.state = {
 
         }
-    }
-
-    displayPriceRange = (number) => {
-        if (number === 1) return '$'
-        else if (number === 2) return '$$'
-        else if (number === 3) return '$$$'
-        else if (number === 4) return '$$$$'
     }
 
     render() {
@@ -29,8 +23,8 @@ class UserHomeRestaurantCard extends Component {
                     cover={<img alt="example" src={restaurant.pictureURL} />}
                     onClick={() => this.props.onClick()}
                 >
-                    <div className="restaurant-title">{restaurant.name}</div>
-                    <div className="restaurant-subtitle">{this.displayPriceRange(restaurant.priceRange)} • {restaurant.description}</div>
+                    <div className="restaurant-title">{`${restaurant.name} (${restaurant.address})`}</div>
+                    <div className="restaurant-subtitle">{displayPriceRange(restaurant.priceRange)} • {restaurant.description}</div>
                     <span>
                         <Rate disabled allowHalf defaultValue={4.5} />
                         <span className="ant-rate-text">(68)</span>

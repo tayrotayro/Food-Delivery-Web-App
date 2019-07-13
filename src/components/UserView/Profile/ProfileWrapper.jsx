@@ -20,9 +20,6 @@ class ProfileWrapper extends Component {
             fullName: "",
             email: "",
             phone: "",
-            fullNameError: "",
-            emailError: "",
-            phoneError: "",
             openSecurityDrawer: false,
             openAddressDrawer: false,
             openPaymentDrawer: false,
@@ -70,7 +67,6 @@ class ProfileWrapper extends Component {
 
     handleBecomeOwner = () => {
         const userId = localStorage.getItem('loggedInUserId');
-        console.log(userId);
         Axios.post(`http://localhost:5000/api/owner/${userId}`)
             .then(response => {
                 console.log(response);
@@ -84,7 +80,6 @@ class ProfileWrapper extends Component {
 
     handleBecomeDriver = () => {
         const userId = localStorage.getItem('loggedInUserId');
-        console.log(userId);
         Axios.post(`http://localhost:5000/api/driver/${userId}`)
             .then(response => {
                 console.log(response);
@@ -172,8 +167,8 @@ class ProfileWrapper extends Component {
                                 <Form.Item
                                     label="Full name"
                                     colon={false}
-                                    validateStatus={this.state.fullNameError === "" ? null : "error"}
-                                    help={this.state.fullNameError === "" ? null : this.state.fullNameError}
+                                    validateStatus={this.state.fullName === "" ? "error" : null}
+                                    help={this.state.fullName === "" ? "Full name is required" : null}
                                 >
                                     <Input
                                         autoFocus size="large"
@@ -186,8 +181,8 @@ class ProfileWrapper extends Component {
                                 <Form.Item
                                     label="Email"
                                     colon={false}
-                                    validateStatus={this.state.emailError === "" ? null : "error"}
-                                    help={this.state.emailError === "" ? null : this.state.emailError}
+                                    validateStatus={this.state.email === "" ? "error" : null}
+                                    help={this.state.email === "" ? "Email is required" : null}
                                 >
                                     <Input
                                         size="large" type="email"
@@ -200,8 +195,8 @@ class ProfileWrapper extends Component {
                                 <Form.Item
                                     label="Phone number"
                                     colon={false}
-                                    validateStatus={this.state.phoneError === "" ? null : "error"}
-                                    help={this.state.phoneError === "" ? null : this.state.phoneError}
+                                    validateStatus={this.state.phone === "" ? "error" : null}
+                                    help={this.state.phone === "" ? "Phone number is required" : null}
                                 >
                                     <Input
                                         size="large"
@@ -218,7 +213,11 @@ class ProfileWrapper extends Component {
                                         textAlign: 'right'
                                     }}
                                 >
-                                    <Button size="large" onClick={this.handleUpdateInfo} type="primary" htmlType="submit">Save</Button>
+                                    <Button
+                                        size="large" type="primary" htmlType="submit"
+                                        onClick={this.handleUpdateInfo}
+                                        disabled={this.state.fullName === "" || this.state.email === "" || this.state.phone === ""}
+                                    >Save</Button>
                                 </div>
                             </Form>
                             :
