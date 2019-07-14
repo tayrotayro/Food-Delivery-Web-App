@@ -19,21 +19,17 @@ class MenuDrawer extends Component {
             newDescription: "",
             newPrice: null,
             newPictureUrl: "",
-            menuItems:[]
+            menuItems:[],
+            name: ""
         }
     }
 
     componentDidMount() {
-        this.fetchMenuItems();
-        // Axios.get(`http://localhost:5000/api/menu-item/${this.props.menuId}`)
-        //     .then(response => {
-        //         this.setState({
-        //             menuItems: response.data.data.items
-        //         })
-        //     })
-        //     .catch(err => {
-        //         console.log(err);
-        //     })
+        const restaurant = this.props.restaurant;
+        console.log(restaurant);
+        this.setState({
+            name: restaurant.name,
+        })
     }
 
     fetchMenuItems = () => {
@@ -108,7 +104,7 @@ class MenuDrawer extends Component {
             <Drawer
                 className="restaurant-menu-drawer"
                 title={<PageHeader
-                    title="RICE & SPICE - MENU"
+                    title={`${this.state.name.toUpperCase()} - MENU`}
                     onBack={() => this.props.onClose()}
                 />}
                 placement="right"

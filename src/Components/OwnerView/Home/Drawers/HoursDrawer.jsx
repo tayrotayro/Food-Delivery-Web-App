@@ -7,7 +7,17 @@ import './HoursDrawer.css';
 class HoursDrawer extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            name: ""
+        }
+    }
+
+    componentDidMount() {
+        const restaurant = this.props.restaurant;
+        console.log(restaurant);
+        this.setState({
+            name: restaurant.name,
+        })
     }
 
     render() {
@@ -16,7 +26,7 @@ class HoursDrawer extends Component {
             <Drawer
                 className="restaurant-hours-drawer"
                 title={<PageHeader
-                    title="RICE & SPICE - HOURS"
+                    title={`${this.state.name.toUpperCase()} - INFORMATION`}
                     onBack={() => this.props.onClose()}
                 />}
                 placement="right"

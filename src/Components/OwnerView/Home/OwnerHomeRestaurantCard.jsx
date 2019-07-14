@@ -58,6 +58,7 @@ class OwnerHomeRestaurantCard extends Component {
                     onClose={() => this.setState({ openInfoDrawer: false })}
                     refetch={this.props.refetch} />
                 <HoursDrawer
+                    restaurant={restaurant}
                     hours={restaurant.hours}
                     isOpen={this.state.openHoursDrawer}
                     onClose={() => this.setState({ openHoursDrawer: false })} />

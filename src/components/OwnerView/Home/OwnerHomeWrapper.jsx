@@ -57,9 +57,8 @@ class OwnerHomeWrapper extends Component {
             <div className="owner-home">
                 <div className="headings-with-actions">
                     <h1>My Restaurants</h1>
-                    <a>
-                        <Icon type="plus-circle" style={{ fontSize: '26px' }}
-                            onClick={() => this.setState({ openAddRestaurantDrawer: true })} />
+                    <a  onClick={() => this.setState({ openAddRestaurantDrawer: true })}> <p className="add-new">Add New Restaurant</p>
+                        <Icon type="plus-circle" style={{ fontSize: '26px' }} />
                     </a>
                 </div>
                 <Row gutter={{ xs: 0, sm: 0, md: 32, lg: 32, xl: 32 }}>

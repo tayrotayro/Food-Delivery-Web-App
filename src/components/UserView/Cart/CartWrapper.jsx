@@ -34,8 +34,12 @@ class CartWrapper extends Component {
     }
 
     componentDidMount() {
-        const cartId = localStorage.getItem('userCartId');
+        this.fetchCart();
+    }
 
+    fetchCart = () => {
+        const cartId = localStorage.getItem('userCartId');
+    
         axios.get(`http://localhost:5000/api/cart/${cartId}`)
             .then(response => {
                 this.calculateTotal(response.data.data.items);
@@ -99,7 +103,6 @@ class CartWrapper extends Component {
             ccv: this.state.ccv
         })
             .then(response => {
-                console.log(response);
                 this.next();
                 this.resetCart();
             })
@@ -149,6 +152,7 @@ class CartWrapper extends Component {
                             &&
                             <OrderItemList isEditable={true} editableItems={this.state.cart.items}
                                 subtotal={this.state.subtotal} tax={this.state.tax} total={this.state.total}
+                                onUpdateItem={this.fetchCart}
                             />
                         }
                         {
