@@ -40,6 +40,7 @@ class InfoDrawer extends Component {
             address: this.state.address,
             phone: this.state.phone,
             description: this.state.description,
+            priceRange: this.state.priceRange,
             pictureURL: this.state.pictureUrl
         })
             .then(() => {
@@ -137,7 +138,7 @@ class InfoDrawer extends Component {
                         label="Price Range"
                         colon={false}
                         style={{ margin: '8px 0px' }}>
-                        <Select defaultValue="$" size="large" onChange={(value) => { this.setState({ priceRange: value }) }} required>
+                        <Select defaultValue={this.state.priceRange} size="large" onChange={(value) => { this.setState({ priceRange: value }) }} required>
                             <Option value={1}>$</Option>
                             <Option value={2}>$$</Option>
                             <Option value={3}>$$$</Option>

@@ -51,3 +51,16 @@
 .no-restaurants {
     padding: 20px;
 }
+
+.add-new {
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    font-size: 19px;
+}
+
+@media (max-width: 600px) {
+    .add-new {
+        display: none;
+    }
+}

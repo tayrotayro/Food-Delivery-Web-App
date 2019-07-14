@@ -7,7 +7,9 @@ import './OrderItemList.css';
 class OrderItemList extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            cartId: null
+        }
     }
 
     // componentDidMount() {
@@ -36,7 +38,7 @@ class OrderItemList extends Component {
                     <div>
                         {
                             this.props.editableItems.map(item => {
-                                return <EditableOrderItem item={item} />
+                                return <EditableOrderItem key={item._id} item={item} onUpdateItem={this.props.onUpdateItem} />
                             })
                         }
                     </div>
